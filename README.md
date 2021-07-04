@@ -1,4 +1,4 @@
-![](https://assets.codepen.io/2856/jammin-lobby-card.jpg)
+![](https://www.dropbox.com/s/q6d3qgmayo7epxa/jammin-lobby-card.jpg?dl=1)
 
 # Jammin' to Eleventy
 
