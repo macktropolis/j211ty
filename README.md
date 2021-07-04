@@ -1,4 +1,4 @@
-![](https://www.dropbox.com/s/q6d3qgmayo7epxa/jammin-lobby-card.jpg?dl=1)
+![](https://www.dropbox.com/s/q6d3qgmayo7epxa/jammin-lobby-card.jpg?raw=1)
 
 # Jammin' to Eleventy
 
