@@ -1,3 +1,5 @@
+![](https://assets.codepen.io/2856/jammin-lobby-card.jpg)
+
 # Jammin' to 11ty
 
 ## Overview
