@@ -7,8 +7,11 @@
         {{ content | safe }}
     </main>
 
+    {% set ctaContent = cta %} 
+    {% include '../blocks/cta.njk' %}
+    
     {% include '../sections/footer.njk' %}
 
-<script src="/js/netlify-cms.js"></script>
+    <script src="/js/netlify-cms.js"></script>
 </body>
 </html>

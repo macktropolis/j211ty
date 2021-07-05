@@ -1,0 +1,21 @@
+@use '../01-config' as *;
+
+.container {
+    position: relative;
+
+    &.bg {
+        background-color: var(--clr-bw-900);
+    }
+    
+    &__inner {
+        align-items: center;
+        display: grid;
+        justify-content: center;
+        max-width: 85ch;
+        padding: var( --flow-xl );
+        position: relative;
+        z-index: 1;
+
+        @include center-margins;
+    }
+}

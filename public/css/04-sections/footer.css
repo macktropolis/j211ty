@@ -483,19 +483,4 @@ Mixins
   --ff-awesome: "FontAwesome";
 }
 
-.brand h1.brand__title {
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  left: -1000px;
-  top: -1000px;
-  height: 1px;
-  width: 1px;
-  text-indent: -1000px;
-}
-.brand .logo {
-  height: auto;
-  max-width: 300px;
-}
-
-/*# sourceMappingURL=brand.css.map */
+/*# sourceMappingURL=footer.css.map */

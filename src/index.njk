@@ -1,30 +1,19 @@
 ---
 title: Homepage
 layout: 'njk/templates/base.njk'
+primaryCTA:
+  title: 'Digital Marketing is our bread & butter'
+  summary: 'Let us help you create the perfect campaign with our multi-faceted team of talented creatives.'
+  buttonText: 'See our work'
+  buttonUrl: '/work'
+  image: '/images/bg/toast.jpg'
+  imageAlt: 'Buttered toasted white bread'
 ---
 
-<div class="jumbotron">
-    <h1>Welcome to {{ site.name }}</h1>
-</div>
+{% include 'njk/blocks/jumbotron.njk' %}
+{% include 'njk/blocks/featured-articles.njk' %}
 
-<section id="featured-articles" class="articles">
-    <div class="container flow">
-        <h1 class="section-title text-center">Featured Article</h1>
-        <ul role="list" class="articles__list flow">
-            {%- for post in collections.featured | reverse |  limitTo(1) -%}
-                {% include 'njk/blocks/article-snippet.njk' %}
-            {%- endfor -%}
-        </ul>
-    </div>
-</section>
+{% set ctaContent = primaryCTA %} 
+{% include "njk/blocks/cta.njk" %} 
 
-<section id="featured-articles" class="articles">
-    <div class="container flow">
-        <h1 class="section-title text-center">Latest Articles</h1>
-        <ul role="list" class="articles__list flow">
-            {%- for post in collections.post | reverse | limitTo(3) -%}
-                {% include 'njk/blocks/article-snippet.njk' %}
-            {%- endfor -%}
-        </ul>
-    </div>
-</section>
+{% include 'njk/blocks/latest-articles.njk' %}

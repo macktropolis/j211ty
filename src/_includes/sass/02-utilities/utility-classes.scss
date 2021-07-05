@@ -1,3 +1,5 @@
+@use '../01-config' as *;
+
 /* --------------------------------------------------------
 Utility Classes defined from Config
 -------------------------------------------------------- */
@@ -15,6 +17,11 @@ Utility Classes defined from Config
         .txc-#{$color}-#{$shade} { color: #{$value} };
         .bgc-#{$color}-#{$shade} { background-color: #{$value} };
     }
+}
+
+// Opacity
+@each $op-setting, $value in $opacity {
+    .op-#{$op-setting} { opacity: #{$value} };
 }
 
 // Typography

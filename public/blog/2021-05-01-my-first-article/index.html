@@ -7,6 +7,8 @@
     <title>My First Article | Jammin&#39; to Eleventy</title>
     <link rel="stylesheet" href="/css/styles.css">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer src="/js/int-observers.js"></script>
+    <script defer src="/js/scroll.js"></script>
 </head>
 <body class="site">
 
@@ -18,7 +20,7 @@
     <img src="/assets/logo.svg" alt="Jammin&#39; to Eleventy" class="logo">
 </div>
     <input id="nav-toggle" class="nav-toggle" type="checkbox">
-<nav id="site-nav" class="nav">
+<nav class="nav site-nav">
     <ul role="list" class="nav__list"><li class="nav__item">
             <a href="/" >Home</a>
         </li><li class="nav__item">
@@ -58,6 +60,23 @@
 </article>
     </main>
 
+     
+    
+
+ 
+  
+
+
+<section id="cta">
+  <div class="container flow">
+      <h2 class="cta__heading headline" data-highlight="quaternary">Get in touch if we seem like a good fit</h2>
+      <p class="cta__summary measure-short">Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <div class="cta__action">
+        <a class="btn btn--primary" data-variant="ghost" href="">Start a new project</a>
+      </div>
+  </div>
+</section>
+    
     <footer id="site__footer">
     <div id="brand" class="brand">
     <h1 class="brand__title"> 
@@ -68,6 +87,6 @@
     <p>&copy;1969&dash;2021 Mack Richardson dba Qube Consulting</p>
 </footer>
 
-<script src="/js/netlify-cms.js"></script>
+    <script src="/js/netlify-cms.js"></script>
 </body>
 </html>

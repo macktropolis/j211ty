@@ -483,19 +483,22 @@ Mixins
   --ff-awesome: "FontAwesome";
 }
 
-.brand h1.brand__title {
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  left: -1000px;
-  top: -1000px;
-  height: 1px;
-  width: 1px;
-  text-indent: -1000px;
+.container {
+  position: relative;
 }
-.brand .logo {
-  height: auto;
-  max-width: 300px;
+.container.bg {
+  background-color: var(--clr-bw-900);
+}
+.container__inner {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  max-width: 85ch;
+  padding: var(--flow-xl);
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*# sourceMappingURL=brand.css.map */
+/*# sourceMappingURL=container.css.map */

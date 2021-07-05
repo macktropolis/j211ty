@@ -483,19 +483,78 @@ Mixins
   --ff-awesome: "FontAwesome";
 }
 
-.brand h1.brand__title {
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  left: -1000px;
-  top: -1000px;
-  height: 1px;
-  width: 1px;
-  text-indent: -1000px;
+#site__header {
+  display: grid;
+  padding: 1rem 3rem;
+  position: fixed;
+  text-align: center;
+  transition: all ease-in-out 255ms;
+  width: 100%;
+  z-index: 999;
 }
-.brand .logo {
-  height: auto;
-  max-width: 300px;
+#site__header nav.site-nav ul {
+  padding: 0;
+}
+#site__header nav.site-nav ul li {
+  padding: 1rem 0.5rem;
 }
 
-/*# sourceMappingURL=brand.css.map */
+#site__header.scrolled {
+  background-color: var(--clr-primary-400);
+  box-shadow: 0 0 1rem var(--clr-bw-600);
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 760px) {
+  #site__header {
+    text-align: left;
+  }
+  #site__header nav.site-nav {
+    all: unset;
+    align-items: center;
+    grid-column: 2/span 2;
+    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #site__header nav.site-nav ul {
+    background-color: transparent;
+    display: flex;
+  }
+  #site__header nav.site-nav ul li {
+    margin-bottom: 0;
+    margin-left: var(--flow-space-100);
+  }
+  #site__header nav.site-nav ul li a {
+    color: var(--clr-secondary-700);
+    opacity: 1;
+    position: relative;
+  }
+  #site__header nav.site-nav ul li a:hover {
+    color: var(--clr-secondary-100);
+  }
+  #site__header nav.site-nav ul li a::before {
+    content: "";
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    right: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform ease-in-out 250ms;
+  }
+  #site__header nav.site-nav ul li a:hover::before {
+    transform: scaleY(1);
+  }
+  #site__header .nav-toggle-label {
+    display: none;
+  }
+
+  #site__header.scrolled nav.site-nav ul li a::before {
+    top: -3rem;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

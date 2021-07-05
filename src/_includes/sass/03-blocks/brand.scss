@@ -1,14 +1,16 @@
+@use '../01-config' as *;
+
 .brand {
 
-    &__title {
+    h1.brand__title {
         opacity: 0;
         overflow: hidden;
-        position: fixed;
-            left: -1000;
-            top: -1000;
+        position: absolute;
+        left: -1000px;
+        top: -1000px;
         height: 1px;
         width: 1px;
-        text-indent: -1000;
+        text-indent: -1000px;
     }
 
     .logo {

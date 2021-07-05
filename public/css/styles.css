@@ -1,6 +1,9 @@
-/* --------------------------------------------------------
-Configuration Stylesheets
--------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif:wght@400;700&display=swap");
+/**
+*
+* Testing
+*
+**/
 /*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -461,11 +464,6 @@ template {
   display: none;
 }
 
-/**
-*
-* Testing
-*
-**/
 /* --------------------------------------------------------
 Color Maps
 --------------------------------------------------------- */
@@ -476,8 +474,15 @@ Typography Maps
 Spacing Maps
 --------------------------------------------------------- */
 /* --------------------------------------------------------
-Utility Stylesheets
+Mixins
 -------------------------------------------------------- */
+:root {
+  --ff-display: "Fredoka One", cursive;
+  --ff-sans: "Noto Sans JP", sans-serif;
+  --ff-serif: "Noto Serif", serif;
+  --ff-awesome: "FontAwesome";
+}
+
 /* --------------------------------------------------------
 Utility Classes defined from Config
 -------------------------------------------------------- */
@@ -491,6 +496,7 @@ Utility Classes defined from Config
   --clr-tertiary-700: #152e41;
   --clr-tertiary-400: #2e658e;
   --clr-tertiary-100: #80b1d6;
+  --clr-bw-900: black;
   --clr-bw-800: #16191d;
   --clr-bw-700: #2d3139;
   --clr-bw-600: #434a56;
@@ -504,12 +510,15 @@ Utility Classes defined from Config
   --clr-stop-700: #511519;
   --clr-stop-400: #c9363f;
   --clr-stop-100: #eaaeb2;
+  --clr-stop-50: #faebec;
   --clr-caution-700: #b49e0e;
   --clr-caution-400: #f0d738;
   --clr-caution-100: #f7ea97;
+  --clr-caution-50: #fefdf6;
   --clr-go-700: #2e3d0f;
   --clr-go-400: #6b8f24;
   --clr-go-100: #a3d147;
+  --clr-go-50: #cce699;
 }
 
 .txc-primary-700 {
@@ -582,6 +591,14 @@ Utility Classes defined from Config
 
 .bgc-tertiary-100 {
   background-color: #80b1d6;
+}
+
+.txc-bw-900 {
+  color: black;
+}
+
+.bgc-bw-900 {
+  background-color: black;
 }
 
 .txc-bw-800 {
@@ -688,6 +705,14 @@ Utility Classes defined from Config
   background-color: #eaaeb2;
 }
 
+.txc-stop-50 {
+  color: #faebec;
+}
+
+.bgc-stop-50 {
+  background-color: #faebec;
+}
+
 .txc-caution-700 {
   color: #b49e0e;
 }
@@ -712,6 +737,14 @@ Utility Classes defined from Config
   background-color: #f7ea97;
 }
 
+.txc-caution-50 {
+  color: #fefdf6;
+}
+
+.bgc-caution-50 {
+  background-color: #fefdf6;
+}
+
 .txc-go-700 {
   color: #2e3d0f;
 }
@@ -734,6 +767,30 @@ Utility Classes defined from Config
 
 .bgc-go-100 {
   background-color: #a3d147;
+}
+
+.txc-go-50 {
+  color: #cce699;
+}
+
+.bgc-go-50 {
+  background-color: #cce699;
+}
+
+.op-100 {
+  opacity: 1;
+}
+
+.op-75 {
+  opacity: 0.75;
+}
+
+.op-50 {
+  opacity: 0.5;
+}
+
+.op-25 {
+  opacity: 0.25;
 }
 
 :root {
@@ -895,35 +952,242 @@ Utility Classes defined from Config
   --radius-sm: 0.25rem;
 }
 
-:root {
-  --ff-display: "Maiden Orange", cursive;
-  --ff-serif: "Zilla Slab", serif;
-  --ff-awesome: "FontAwesome";
+body {
+  font-family: var(--ff-sans);
 }
 
-/* --------------------------------------------------------
-Mixins
--------------------------------------------------------- */
-/* --------------------------------------------------------
-Blocks
--------------------------------------------------------- */
-.nav__item [aria-current=page] {
-  font-weight: var(--fw-900);
+img.bg__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+img.bg__img.cover {
+  object-fit: cover;
+}
+img.bg__img.contain {
+  object-fit: contain;
 }
 
-.brand__title {
+.btn {
+  display: block;
+  clear: both;
+}
+
+.brand h1.brand__title {
   opacity: 0;
   overflow: hidden;
-  position: fixed;
-  left: -1000;
-  top: -1000;
+  position: absolute;
+  left: -1000px;
+  top: -1000px;
   height: 1px;
   width: 1px;
-  text-indent: -1000;
+  text-indent: -1000px;
 }
 .brand .logo {
   height: auto;
   max-width: 300px;
+}
+
+.nav__item [aria-current=page] {
+  font-weight: var(--fw-900);
+}
+
+.nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: left;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+  width: 100%;
+}
+.nav__list {
+  background-color: var(--clr-bw-800);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__list li {
+  font-family: var(--ff-sans);
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+.nav__list li a {
+  color: var(--clr-bw-0);
+  display: block;
+  font-size: var(--fs-50);
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+  text-decoration: none;
+  text-transform: var(--tt-upper);
+}
+.nav__list li a::before {
+  background-color: var(--clr-bw-0);
+}
+.nav__list li [aria-current=page] {
+  font-weight: var(--fw-900);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+.nav-toggle:checked ~ nav ul li a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label {
+  transform: rotate(-45deg);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:before {
+  opacity: 0;
+  bottom: auto;
+}
+.nav-toggle:checked ~ .nav-toggle-label span:after {
+  transform: rotate(90deg);
+  top: auto;
+}
+
+.nav-toggle-label {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1rem;
+}
+.nav-toggle-label span,
+.nav-toggle-label span:before,
+.nav-toggle-label span:after {
+  background-color: var(--clr-secondary-700);
+  border-radius: 2px;
+  display: block;
+  height: 5px;
+  position: relative;
+  transition: all ease-in-out 250ms;
+  width: 1.5rem;
+}
+.nav-toggle-label span:before,
+.nav-toggle-label span:after {
+  content: "";
+  position: absolute;
+}
+.nav-toggle-label span:before {
+  bottom: 10px;
+}
+.nav-toggle-label span:after {
+  top: 10px;
+}
+
+.container {
+  position: relative;
+}
+.container.bg {
+  background-color: var(--clr-bw-900);
+}
+.container__inner {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  max-width: 85ch;
+  padding: var(--flow-xl);
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#site__header {
+  display: grid;
+  padding: 1rem 3rem;
+  position: fixed;
+  text-align: center;
+  transition: all ease-in-out 255ms;
+  width: 100%;
+  z-index: 999;
+}
+#site__header nav.site-nav ul {
+  padding: 0;
+}
+#site__header nav.site-nav ul li {
+  padding: 1rem 0.5rem;
+}
+
+#site__header.scrolled {
+  background-color: var(--clr-primary-400);
+  box-shadow: 0 0 1rem var(--clr-bw-600);
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 760px) {
+  #site__header {
+    text-align: left;
+  }
+  #site__header nav.site-nav {
+    all: unset;
+    align-items: center;
+    grid-column: 2/span 2;
+    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #site__header nav.site-nav ul {
+    background-color: transparent;
+    display: flex;
+  }
+  #site__header nav.site-nav ul li {
+    margin-bottom: 0;
+    margin-left: var(--flow-space-100);
+  }
+  #site__header nav.site-nav ul li a {
+    color: var(--clr-secondary-700);
+    opacity: 1;
+    position: relative;
+  }
+  #site__header nav.site-nav ul li a:hover {
+    color: var(--clr-secondary-100);
+  }
+  #site__header nav.site-nav ul li a::before {
+    content: "";
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    right: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform ease-in-out 250ms;
+  }
+  #site__header nav.site-nav ul li a:hover::before {
+    transform: scaleY(1);
+  }
+  #site__header .nav-toggle-label {
+    display: none;
+  }
+
+  #site__header.scrolled nav.site-nav ul li a::before {
+    top: -3rem;
+  }
+}
+.site__content {
+  padding-top: calc( var( --flow-xxl ) * 1.25 );
+}
+.site__content > section .container {
+  padding: var(--flow-xl);
+  max-width: 85ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
