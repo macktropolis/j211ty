@@ -1,0 +1,15 @@
+---
+title: My Blog
+layout: 'njk/templates/base.njk'
+---
+
+<section class="articles">
+    <div class="container flow">
+        <h1 class="articles__title">All Articles</h1>
+        <ul role="list" class="articles__list flow">
+            {%- for post in collections.post | reverse -%}
+                {% include 'njk/blocks/article-snippet.njk' %}
+            {%- endfor -%}
+        </ul>
+    </div>
+</section>
