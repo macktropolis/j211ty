@@ -1,0 +1,14 @@
+{% include '../blocks/site-head.njk' %}
+<body class="site">
+
+    {% include '../sections/header.njk' %}
+
+    <main tabindex="-1" class="wrapper site__content" id="content">
+        {{ content | safe }}
+    </main>
+
+    {% include '../sections/footer.njk' %}
+
+<script src="/js/netlify-cms.js"></script>
+</body>
+</html>
