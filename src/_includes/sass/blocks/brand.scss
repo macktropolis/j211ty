@@ -1,0 +1,18 @@
+.brand {
+
+    &__title {
+        opacity: 0;
+        overflow: hidden;
+        position: fixed;
+            left: -1000;
+            top: -1000;
+        height: 1px;
+        width: 1px;
+        text-indent: -1000;
+    }
+
+    .logo {
+        height: auto;
+        max-width: 300px;
+    }
+}

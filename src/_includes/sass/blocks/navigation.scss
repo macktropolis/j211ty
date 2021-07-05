@@ -1,0 +1,9 @@
+.nav {
+
+    &__item {
+
+        [aria-current="page"] {
+            font-weight: var(--fw-900);
+        }
+    }
+}
