@@ -1,0 +1,95 @@
+/* --------------------------------------------------------
+Utility Classes defined from Config
+-------------------------------------------------------- */
+// Colors
+:root {
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+}
+
+@each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+        .txc-#{$color}-#{$shade} { color: #{$value} };
+        .bgc-#{$color}-#{$shade} { background-color: #{$value} };
+    }
+}
+
+// Typography
+:root {
+    // Font Size
+    @each $screen-size, $font-size in $type-scale {
+        @if $screen-size == small {
+            @each $size, $value in $font-size {
+                --fs-#{$size}: #{$value};
+            }
+        } @else {
+            @include media('>=tablet') {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+    }
+    // Font Weight
+    @each $weight, $value in $font-weight {
+        --fw-#{$weight}: #{$value};
+    }
+    // Text Transformation
+    @each $trans, $value in $text-trans {
+        --tt-#{$trans}: #{$value};
+    }
+}
+
+// Font Size
+@each $screen-size, $font-size in $type-scale {
+    @if $screen-size == small {
+        @each $size, $value in $font-size {
+            .fs-#{$size} { font-size: #{$value} };
+        }
+    } @else {
+        @include media('>=tablet') {
+            @each $size, $value in $font-size {
+                .fs-#{$size} { font-size: #{$value} };
+            }
+        }
+    }
+}
+
+// Font Weight
+@each $weight, $value in $font-weight {
+    .fw-#{$weight} { font-weight: #{$value} };
+}
+
+// Text Transformations
+@each $trans, $value in $text-trans {
+    .tt-#{$trans} { text-transform: #{$value} };
+}
+
+// Text Align
+@each $align, $value in $text {
+    .text-#{$align} { text-align: #{$value} };
+}
+
+// Flow Space Variables
+:root {
+    @each $flow, $value in $flow-space {
+        --flow-#{$flow}: #{$value};
+    }
+}
+
+// Border Width Variables
+:root {
+    @each $width, $value in $border-width {
+        --border-#{$width}: #{$value};
+    }
+}
+
+// Border Radius Variables
+:root {
+    @each $radius, $value in $border-radius {
+        --radius-#{$radius}: #{$value};
+    }
+}
