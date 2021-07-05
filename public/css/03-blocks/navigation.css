@@ -1,0 +1,5 @@
+.nav__item [aria-current=page] {
+  font-weight: var(--fw-900);
+}
+
+/*# sourceMappingURL=navigation.css.map */
