@@ -489,6 +489,9 @@ Mixins
 .container.bg {
   background-color: var(--clr-bw-900);
 }
+.container.bg.invert {
+  color: var(--clr-bw-0);
+}
 .container__inner {
   align-items: center;
   display: grid;
@@ -496,6 +499,7 @@ Mixins
   max-width: 85ch;
   padding: var(--flow-xl);
   position: relative;
+  width: 95%;
   z-index: 1;
   margin-left: auto;
   margin-right: auto;

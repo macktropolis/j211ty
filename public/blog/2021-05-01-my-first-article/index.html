@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="/css/styles.css">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script defer src="/js/int-observers.js"></script>
-    <script defer src="/js/scroll.js"></script>
 </head>
 <body class="site">
 
     <header id="site__header">
-    <div id="brand" class="brand">
+    <div class="brand">
     <h1 class="brand__title"> 
         <a href="/"><span>Jammin&#39; to Eleventy</span></a>
     </h1>
@@ -35,6 +34,7 @@
 </header>
 
     <main tabindex="-1" class="wrapper site__content" id="content">
+        <a name="home" id="anchor--home">Home</a>
         
 <article class="main-article">
 <div class="container container--narrow flow">
@@ -58,16 +58,15 @@
   
 </div>
 </article>
-    </main>
 
-     
-    
+         
+        
 
  
   
 
 
-<section id="cta">
+<section class="cta">
   <div class="container flow">
       <h2 class="cta__heading headline" data-highlight="quaternary">Get in touch if we seem like a good fit</h2>
       <p class="cta__summary measure-short">Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</p>
@@ -76,15 +75,18 @@
       </div>
   </div>
 </section>
+    </main>
     
     <footer id="site__footer">
-    <div id="brand" class="brand">
+    <section class="inner flow grid">
+        <div class="brand">
     <h1 class="brand__title"> 
         <a href="/"><span>Jammin&#39; to Eleventy</span></a>
     </h1>
     <img src="/assets/logo.svg" alt="Jammin&#39; to Eleventy" class="logo">
 </div>
-    <p>&copy;1969&dash;2021 Mack Richardson dba Qube Consulting</p>
+        <p>&copy;1969&dash;2021 Mack Richardson dba Qube Consulting</p>
+    </section>
 </footer>
 
     <script src="/js/netlify-cms.js"></script>

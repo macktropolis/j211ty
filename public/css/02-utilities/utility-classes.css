@@ -505,7 +505,9 @@ Utility Classes defined from Config
   --clr-bw-300: #8d96a5;
   --clr-bw-200: #a9b0bc;
   --clr-bw-100: #c6cad2;
+  --clr-bw-75: #d4d8dd;
   --clr-bw-50: #e2e5e9;
+  --clr-bw-25: #f1f2f4;
   --clr-bw-0: white;
   --clr-stop-700: #511519;
   --clr-stop-400: #c9363f;
@@ -665,12 +667,28 @@ Utility Classes defined from Config
   background-color: #c6cad2;
 }
 
+.txc-bw-75 {
+  color: #d4d8dd;
+}
+
+.bgc-bw-75 {
+  background-color: #d4d8dd;
+}
+
 .txc-bw-50 {
   color: #e2e5e9;
 }
 
 .bgc-bw-50 {
   background-color: #e2e5e9;
+}
+
+.txc-bw-25 {
+  color: #f1f2f4;
+}
+
+.bgc-bw-25 {
+  background-color: #f1f2f4;
 }
 
 .txc-bw-0 {

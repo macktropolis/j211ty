@@ -1,0 +1,26 @@
+.articles {
+  background-color: var(--clr-go-50);
+}
+.articles .section-title {
+  color: var(--clr-go-400);
+  font-size: var(--fs-100);
+}
+.articles .articles__list li {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.articles .articles__list li > *:nth-child(1) {
+  flex: 1 1 70%;
+  min-width: 25ch;
+}
+.articles .articles__list li > *:nth-child(2) {
+  flex: 1 1 30%;
+  min-width: 15ch;
+}
+.articles .articles__list li aside > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/*# sourceMappingURL=articles.css.map */

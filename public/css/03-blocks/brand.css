@@ -494,6 +494,7 @@ Mixins
   text-indent: -1000px;
 }
 .brand .logo {
+  color: var(--clr-bw-0);
   height: auto;
   max-width: 300px;
 }

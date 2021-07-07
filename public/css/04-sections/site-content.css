@@ -484,7 +484,7 @@ Mixins
 }
 
 .site__content {
-  padding-top: calc( var( --flow-xxl ) * 1.25 );
+  padding-top: calc( var( --flow-xxl ) * 1 );
 }
 .site__content > section .container {
   padding: var(--flow-xl);

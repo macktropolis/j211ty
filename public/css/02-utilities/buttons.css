@@ -1,6 +1,11 @@
 .btn {
+  background-color: var(--clr-go-400);
+  color: var(--clr-bw-25);
   display: block;
   clear: both;
+  padding: var(--flow-sm);
+  text-align: center;
+  max-width: 25ch;
 }
 
 /*# sourceMappingURL=buttons.css.map */

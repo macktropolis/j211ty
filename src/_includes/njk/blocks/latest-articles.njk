@@ -1,6 +1,6 @@
 <section id="articles latest container" class="articles">
     <div class="container__inner flow">
-        <h1 class="section-title text-center">Latest Articles</h1>
+        <h2 class="section-title text-center tt-upper">Latest Articles</h2>
         <ul role="list" class="articles__list flow">
             {%- for post in collections.post | reverse | limitTo(3) -%}
                 {% include 'njk/blocks/article-snippet.njk' %}

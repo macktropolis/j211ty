@@ -1,1 +1,20 @@
 @use '../01-config' as *;
+
+footer#site__footer {
+
+    section {
+        text-align: center;
+
+        &.grid {
+            gap: var(--flow-sm);
+        }
+
+        &.flow {
+            margin-bottom: 0;
+        }
+
+        .brand {
+            text-align: center;
+        }
+    }
+}

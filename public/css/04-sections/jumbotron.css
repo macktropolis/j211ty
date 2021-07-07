@@ -1,3 +1,24 @@
-
+#jumbotron {
+  padding-bottom: var(--flow-xxl);
+  padding-top: var(--flow-xxl);
+}
+#jumbotron .container__inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row-reverse;
+}
+#jumbotron .container__inner > *:nth-child(1) {
+  flex: 1 1 70%;
+  min-width: 25ch;
+}
+#jumbotron .container__inner > *:nth-child(2) {
+  flex: 1 1 30%;
+  min-width: 15ch;
+}
+#jumbotron .container__inner aside > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
 
 /*# sourceMappingURL=jumbotron.css.map */

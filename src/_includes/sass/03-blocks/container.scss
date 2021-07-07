@@ -5,8 +5,12 @@
 
     &.bg {
         background-color: var(--clr-bw-900);
+
+        &.invert {
+            color: var(--clr-bw-0);
+        }
     }
-    
+
     &__inner {
         align-items: center;
         display: grid;
@@ -14,6 +18,7 @@
         max-width: 85ch;
         padding: var( --flow-xl );
         position: relative;
+        width: 95%;
         z-index: 1;
 
         @include center-margins;

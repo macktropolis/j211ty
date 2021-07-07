@@ -1,0 +1,8 @@
+.grid {
+  display: grid;
+  align-items: center;
+  gap: var(--flow-lg);
+  justify-content: center;
+}
+
+/*# sourceMappingURL=grid.css.map */
