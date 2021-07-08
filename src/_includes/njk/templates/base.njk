@@ -1,5 +1,5 @@
 {% include '../blocks/site-head.njk' %}
-<body class="site{{pageClass}}">
+<body class="site{% if pageClass %}{{pageClass}}{% endif %}">
 
     {% include '../sections/header.njk' %}
 
