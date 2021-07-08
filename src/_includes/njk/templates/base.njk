@@ -1,5 +1,5 @@
 {% include '../blocks/site-head.njk' %}
-<body class="site">
+<body class="site{{pageClass}}">
 
     {% include '../sections/header.njk' %}
 
@@ -13,6 +13,8 @@
     
     {% include '../sections/footer.njk' %}
 
+    <script src="/js/index.js"></script>
     <script src="/js/netlify-cms.js"></script>
+    <script src="/js/int-observers.js"></script>
 </body>
 </html>

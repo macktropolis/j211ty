@@ -493,9 +493,6 @@ Mixins
   color: var(--clr-bw-0);
 }
 .container__inner {
-  align-items: center;
-  display: grid;
-  justify-content: center;
   max-width: 85ch;
   padding: var(--flow-xl);
   position: relative;

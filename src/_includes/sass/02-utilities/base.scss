@@ -19,6 +19,8 @@ h4, h5, h6 {
     font-size: calc( var(--fs-100) * .75 );
 }
 
+p { line-height: 200%; }
+
 img {
 
     &.bg__img {

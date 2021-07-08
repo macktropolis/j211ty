@@ -1,0 +1,12 @@
+{% extends "../templates/base.njk" %}
+
+{% set pageHeaderTitle = title %}
+{% set pageHeaderSummary = content %}
+{% set postListItems = pagination.items %}
+
+{% block content %}
+  <article>
+    {% include "../sections/page-header.njk" %}
+    {% include "../sections/articles-list.njk" %}
+  </article>
+{% endblock %}

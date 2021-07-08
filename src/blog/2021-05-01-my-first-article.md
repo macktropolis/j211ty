@@ -5,6 +5,7 @@ description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
   delectus ad magni vel quo maxime, magnam placeat. Reprehenderit, distinctio
   aliquam?
 author: Mack Richardson
+date: 2021-05-01
 tags:
   - post
   - featured

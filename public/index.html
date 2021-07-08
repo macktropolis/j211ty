@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage | Jammin&#39; to Eleventy</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script defer src="/js/int-observers.js"></script>
 </head>
-<body class="site">
+<body class="site home">
 
     <header id="site__header">
     <div class="brand">
@@ -22,10 +22,6 @@
 <nav class="nav site-nav">
     <ul role="list" class="nav__list"><li class="nav__item">
             <a href="/"  aria-current="page">Home</a>
-        </li><li class="nav__item">
-            <a href="/about/" >About</a>
-        </li><li class="nav__item">
-            <a href="/work/" >Work</a>
         </li><li class="nav__item">
             <a href="/blog/" >Blog</a>
         </li></ul>
@@ -59,18 +55,18 @@
         <ul role="list" class="articles__list flow"><li>
     <article class="snippet">
         <h3 class="snippet__title">
-            <a href="/blog/2021-05-01-my-first-article/">
-                My First Article
+            <a href="/blog/2021-07-01-my-fifth-article/">
+                My Fifth Article
             </a>
         </h3>
         <p class="snippet__meta">
             <span class="snippet__author">Mack Richardson</span> &bull;
-            <span class="snippet__date">Saturday, May 1, 2021</span>
+            <span class="snippet__date">Thursday, July 1, 2021</span>
         </p>
         <p class="snippet__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis accusantium sit illo neque rem omnis quaerat, nam similique vitae delectus ad magni vel quo maxime, magnam placeat. Reprehenderit, distinctio aliquam?</p>
-        <a href="/blog/2021-05-01-my-first-article/" class="btn btn--primary">Continue Reading</a>
+        <a href="/blog/2021-07-01-my-fifth-article/" class="btn btn--primary">Continue Reading</a>
     </article>
-    <aside><img src="/assets/uploads/article-1.jpg" alt="This is the image caption" class="snippet__image"></aside>
+    <aside><img src="/assets/uploads/article-5.jpg" alt="This is the image caption" class="snippet__image"></aside>
 </li></ul>
     </div>
 </section>
@@ -93,24 +89,55 @@
 </section> 
 
 <section id="articles latest container" class="articles">
-    <div class="container__inner flow">
+    <div class="container__inner flow grid">
         <h2 class="section-title text-center tt-upper">Latest Articles</h2>
         <ul role="list" class="articles__list flow"><li>
     <article class="snippet">
         <h3 class="snippet__title">
-            <a href="/blog/2021-05-01-my-first-article/">
-                My First Article
+            <a href="/blog/2021-07-01-my-fifth-article/">
+                My Fifth Article
             </a>
         </h3>
         <p class="snippet__meta">
             <span class="snippet__author">Mack Richardson</span> &bull;
-            <span class="snippet__date">Saturday, May 1, 2021</span>
+            <span class="snippet__date">Thursday, July 1, 2021</span>
         </p>
         <p class="snippet__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis accusantium sit illo neque rem omnis quaerat, nam similique vitae delectus ad magni vel quo maxime, magnam placeat. Reprehenderit, distinctio aliquam?</p>
-        <a href="/blog/2021-05-01-my-first-article/" class="btn btn--primary">Continue Reading</a>
+        <a href="/blog/2021-07-01-my-fifth-article/" class="btn btn--primary">Continue Reading</a>
     </article>
-    <aside><img src="/assets/uploads/article-1.jpg" alt="This is the image caption" class="snippet__image"></aside>
+    <aside><img src="/assets/uploads/article-5.jpg" alt="This is the image caption" class="snippet__image"></aside>
+</li><li>
+    <article class="snippet">
+        <h3 class="snippet__title">
+            <a href="/blog/2021-06-25-my-fourth-article/">
+                My Fourth Article
+            </a>
+        </h3>
+        <p class="snippet__meta">
+            <span class="snippet__author">Mack Richardson</span> &bull;
+            <span class="snippet__date">Friday, June 25, 2021</span>
+        </p>
+        <p class="snippet__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis accusantium sit illo neque rem omnis quaerat, nam similique vitae delectus ad magni vel quo maxime, magnam placeat. Reprehenderit, distinctio aliquam?</p>
+        <a href="/blog/2021-06-25-my-fourth-article/" class="btn btn--primary">Continue Reading</a>
+    </article>
+    <aside><img src="/assets/uploads/article-4.jpg" alt="This is the image caption" class="snippet__image"></aside>
+</li><li>
+    <article class="snippet">
+        <h3 class="snippet__title">
+            <a href="/blog/2021-06-15-my-third-article/">
+                My Third Article
+            </a>
+        </h3>
+        <p class="snippet__meta">
+            <span class="snippet__author">Mack Richardson</span> &bull;
+            <span class="snippet__date">Tuesday, June 15, 2021</span>
+        </p>
+        <p class="snippet__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis accusantium sit illo neque rem omnis quaerat, nam similique vitae delectus ad magni vel quo maxime, magnam placeat. Reprehenderit, distinctio aliquam?</p>
+        <a href="/blog/2021-06-15-my-third-article/" class="btn btn--primary">Continue Reading</a>
+    </article>
+    <aside><img src="/assets/uploads/article-3.jpg" alt="This is the image caption" class="snippet__image"></aside>
 </li></ul>
+        <a href="/blog/" class="btn center">See All Articles</a>
     </div>
 </section>
 
@@ -144,6 +171,8 @@
     </section>
 </footer>
 
+    <script src="/js/index.js"></script>
     <script src="/js/netlify-cms.js"></script>
+    <script src="/js/int-observers.js"></script>
 </body>
 </html>

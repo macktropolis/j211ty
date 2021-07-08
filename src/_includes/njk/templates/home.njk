@@ -1,0 +1,9 @@
+{% extends "../templates/base.njk" %}
+{% set pageClass = ' home' %} 
+
+{% block content %}
+<main tabindex="-1" class="wrapper site__content" id="content">
+    <a name="home" id="anchor--home">Home</a>
+    {{ content | safe }}
+</main>
+{% endblock %}

@@ -1,0 +1,11 @@
+@use '../01-config' as *;
+
+.cta {
+    background-color: var(--clr-caution-100);
+}
+
+.home{
+    .cta {
+        background-color: none;
+    }
+}

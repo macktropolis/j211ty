@@ -1,21 +1,22 @@
 ---
 layout: 'njk/templates/base.njk'
 ---
+<section id="jumbotron" class="article__header container bg invert flow">
+    <div class="container__inner flow">
+        <article class="meta container__content flow">
+            <h1 class="article__title">{{ title }}</h1>
+            <p class="article__meta">
+              <span class="article__author">{{ author }}</span> &bull;
+              <span class="article__date">{{ date | postDate }}</span>
+            </p>
+            <p class="article__description">{{ description }}</p>
+        </article>
+    </div>
+    <img class="bg__img cover op-50" src="{{ image }}" alt="{{ imgAlt }}">
+</section>
 
 <article class="main-article">
-<div class="container container--narrow flow">
-  
-    <h1 class="article-title">
-      {{ title }}
-    </h1>
-    <figure class="main-article__figure">
-      <img src="{{ image }}" alt="{{ imageAlt }}">
-      <figcaption>
-        {{ imageAlt }}
-      </figcaption>
-    </figure>
-
-    {{ content | safe }}
-  
-</div>
+  <div class="container__inner flow">
+      {{ content | safe }}
+  </div>
 </article>
