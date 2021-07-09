@@ -107,24 +107,41 @@ Article(s)
     .articles__list {
         li {
             display: flex;
+            align-items: flex-start;
             flex-wrap: nowrap;
+            flex-direction: column-reverse;
             gap: var(--flow-xl);
+            justify-content: center;
             margin-bottom: var(--flow-xxl);
+
+            @include media('>=tablet') {
+                flex-direction: row;
+            }
 
             &:last-of-type {
                 margin-bottom: 0;
             }
             
-            & > *:nth-child(1) {
-                flex: 1 1 70%;
-                min-width: 25ch;
+            @include media('>=tablet') {
+                & > *:nth-child(1) {
+                    flex: 1 1 70%;
+                    min-width: 25ch;
+                }
+        
+                & > *:nth-child(2) {
+                    flex: 1 1 30%;
+                    min-width: 15ch;
+                }
             }
-    
-            & > *:nth-child(2) {
-                flex: 1 1 30%;
-                min-width: 15ch;
+
+            article > .btn {
+                display: block;
+
+                @include media('>=tablet') {
+                    display: inline-block;
+                }
             }
-    
+
             aside > img {
                 height: 100%;
                 object-fit: cover;
