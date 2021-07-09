@@ -4,7 +4,7 @@
   "description": "A Jamstack site framework using Eleventy and SASS.",
   "main": ".eleventy.js",
   "scripts": {
-    "watch:sass": "npx sass src/_includes/sass:public/css --watch",
+    "watch:sass": "npx sass src/sass:public/css --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "start": "concurrently \"npm run watch:eleventy\" \"npm run watch:sass\"",
     "build": "eleventy"

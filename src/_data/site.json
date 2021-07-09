@@ -1,4 +1,6 @@
 {
     "name": "Jammin' to Eleventy",
-    "url": "https://jammin.at"
+    "url": "https://jammin.at",
+    "siteDescription": "A static site quick start framework.",
+    "author": "Mack Richardson"
 }

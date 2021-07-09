@@ -1,0 +1,22 @@
+@use 'breakpoints' as *;
+/* --------------------------------------------------------
+Anchors & Button Styles
+-------------------------------------------------------- */
+a#anchor--home {
+    display: block;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-indent: -9999px;
+    width: 0;
+}
+
+.btn {
+    background-color: var(--clr-go-400);
+    color: var(--clr-bw-25);
+    display: inline-block;
+    clear: both;
+    padding: var(--flow-sm) var(--flow-xl);
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif:wght@400;700&display=swap');
+
+/*
+// Use @font-face if using locally stored web fonts instead of Google Fonts
+@font-face {
+    font-family: "Baloo 2";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Baloo 2 Regular"), local("Baloo-2-Regular"),
+      url("../fonts/baloo-2-v1-latin-regular.woff2") format("woff2");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Baloo 2";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Baloo 2 Medium"), local("Baloo-2-Medium"),
+      url("../fonts/baloo-2-v1-latin-500.woff2") format("woff2");
+    font-display: swap;
+  }
+  */
+
+:root {
+    // Font Family CSS Variables
+    --ff-display: 'Fredoka One', cursive;
+    --ff-sans: 'Noto Sans JP', sans-serif;
+    --ff-serif: 'Noto Serif', serif;
+    --ff-awesome: 'FontAwesome';
+}
+
+@import "destyle";
+@import "mixins";
+@import "typography";
+@import "theme";
+@import "layout";
+@import "buttons";
+@import "nav";
+@import "sections";
+@import "utilities";

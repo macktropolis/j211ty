@@ -1,8 +1,0 @@
-@use '../01-config' as *;
-
-.flex {
-    display: flex;
-    align-items: center;
-    gap: var(--flow-lg);
-    justify-content: center;
-}

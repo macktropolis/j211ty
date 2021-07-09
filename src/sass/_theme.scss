@@ -1,0 +1,72 @@
+/* --------------------------------------------------------
+Theme Styles
+-------------------------------------------------------- */
+// Colors
+$colors: (
+    primary: (
+        700: hsl(356, 58%, 20%),
+        400: hsl(356, 58%, 50%),
+        100: hsl(356, 58%, 80%),
+    ),
+    secondary: (
+        700: hsl(17, 15%, 18%),
+        400: hsl(17, 15%, 36%),
+        100: hsl(43, 32%, 91%),
+    ),
+    tertiary: (
+        700: hsl(206, 51%, 17%),
+        400: hsl(206, 51%, 37%),
+        100: hsl(206, 51%, 67%),
+    ),
+    bw: (
+        900: hsl(218, 12%, 0%),
+        800: hsl(218, 12%, 10%),
+        700: hsl(218, 12%, 20%),
+        600: hsl(218, 12%, 30%),
+        500: hsl(218, 12%, 40%),
+        400: hsl(218, 12%, 50%),
+        300: hsl(218, 12%, 60%),
+        200: hsl(218, 12%, 70%),
+        100: hsl(218, 12%, 80%),
+        75: hsl(218, 12%, 85%),
+        50: hsl(218, 12%, 90%),
+        25: hsl(218, 12%, 95%),
+        0: hsl(218, 12%, 100%),     
+    ),
+    stop: (
+        700: hsl(356, 58%, 20%),
+        400: hsl(356, 58%, 50%),
+        100: hsl(356, 58%, 80%),
+        50: hsl(356, 58%, 95%),
+    ),
+    caution: (
+        700: hsl(52, 86%, 38%),
+        400: hsl(52, 86%, 58%),
+        100: hsl(52, 86%, 78%),
+        50: hsl(52, 86%, 98%),
+    ),
+    go: (
+        700: hsl(80, 60%, 15%),
+        400: hsl(80, 60%, 35%),
+        100: hsl(80, 60%, 55%),
+        50: hsl(80, 60%, 75%),
+    ),
+);
+:root {
+    // Color CSS Variables
+    // i.e. --clr-primary-400
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+}
+// Color Utility Classes
+// i.e. Text Color: class="txc-bw-400"
+// i.e. Background Color: class="bgc-bw-400"
+@each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+        .txc-#{$color}-#{$shade} { color: #{$value} };
+        .bgc-#{$color}-#{$shade} { background-color: #{$value} };
+    }
+}

@@ -1,0 +1,10 @@
+<section class="articles all">
+    <div class="container__inner flow grid">
+        <ul role="list" class="articles__list flow">
+            {%- for post in collections.post | reverse -%}
+                {% include '_article-snippet.njk' %}
+            {%- endfor -%}
+        </ul>
+        {% include '_pagination.njk' %}
+    </div>
+</section>

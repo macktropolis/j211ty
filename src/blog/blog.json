@@ -1,6 +1,6 @@
 {
     "author": "Mack Richardson",
     "tags": "post",
-    "layout": "njk/templates/article.njk",
+    "layout": "article.njk",
     "image": "/assets/uploads/placeholder.jpg"
 }
