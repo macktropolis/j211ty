@@ -6,6 +6,12 @@ pageClass: 'blog'
 {% set pageHeaderSummary = content %}
 {% set postListItems = pagination.items %}
 
+{# If this is a tag, grab those items instead as one large collection #}
+{% if tag %}
+  {% set postListItems = collections[tag] %}
+  {% set pageHeaderTitle = 'Articles filed under &ldquo;' + tag + '&rdquo;' %}
+{% endif %}
+
 {% block content %}
   {% include "_page-header.njk" %}
 
@@ -36,7 +42,13 @@ pageClass: 'blog'
           </li>
           {% endfor %}
         </ul>
+        
+        {# If we leave pagination in for tags, the next and prev links will 
+        link to tags and be rather confusing, so don't render in that situation #}
+        {% if not tag %}
           {% include '_pagination.njk' %}
+        {% endif %}
+          
     </div>  
   </section>
 {% endblock %}
