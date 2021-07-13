@@ -18,7 +18,6 @@ $flow-space: (
         --flow-#{$flow}: #{$value};
     }
 }
-
 // Border Width
 $border-width: (
     xxl: 3rem,
@@ -34,7 +33,6 @@ $border-width: (
         --border-#{$width}: #{$value};
     }
 }
-
 // Border Radius
 $border-radius: (
     xxl: 2rem,
@@ -50,32 +48,7 @@ $border-radius: (
         --radius-#{$radius}: #{$value};
     }
 }
-
-body {
-    background-color: var(--clr-bw-25);
-    color: var(--clr-bw-700);
-}
-
-img {
-
-    &.bg__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: 0;
-        
-        &.cover {
-            object-fit: cover;
-        }
-
-        &.contain {
-            object-fit: contain;
-        }
-    }
-}
-
+// Container
 .container {
     position: relative;
 
@@ -97,7 +70,7 @@ img {
         @include center-margins;
     }
 }
-
+// Flexbox
 .flex {
     display: flex;
     align-items: center;
@@ -105,12 +78,12 @@ img {
     flex-direction: row;
     justify-content: center;
 }
-
+// Flows
 .flow {
     margin-bottom: var(--flow-sm);
     padding: var(--flow-med) var(--flow-sm);
 }
-
+// Floats
 .float {
     display: block;
     float: left;
@@ -140,7 +113,7 @@ img {
         text-align: center;
     }
 }
-
+// Grid
 .grid {
     display: grid;
     align-items: center;

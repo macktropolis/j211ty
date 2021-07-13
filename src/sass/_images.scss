@@ -1,0 +1,19 @@
+img {
+
+    &.bg__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        
+        &.cover {
+            object-fit: cover;
+        }
+
+        &.contain {
+            object-fit: contain;
+        }
+    }
+}
