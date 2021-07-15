@@ -24,22 +24,8 @@ pageClass: 'blog'
       {% endif %}
         <ul role="list" class="articles__list flow">
           {% for item in postListItems %}
-            <li class="post-list__item leading-tight measure-long">
-              <article class="snippet">
-                  <h3 class="snippet__title">
-                      <a href="{{ item.url }}">
-                          {{ item.data.title }}
-                      </a>
-                  </h3>
-                  <p class="snippet__meta">
-                      <span class="snippet__author">{{ item.data.author }}</span> &bull;
-                      <span class="snippet__date">{{ item.date | postDate }}</span>
-                  </p>
-                  <p class="snippet__body">{{ item.data.description }}</p>
-                  <a href="{{ item.url }}" class="btn btn--primary">Continue Reading</a>
-              </article>
-              <aside><img src="{{ item.data.image }}" alt="{{ item.data.imageAlt }}" class="snippet__image"></aside>
-          </li>
+              {% include '_article-snippet.njk' %}
+            </li>
           {% endfor %}
         </ul>
         

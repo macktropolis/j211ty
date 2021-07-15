@@ -7,8 +7,7 @@ description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 author: Mack Richardson
 date: 2021-06-01
 tags:
-  - post
-  - featured
+  - Eleventy
 image: /assets/uploads/article-2.jpg
 imageAlt: This is the image caption
 ---
