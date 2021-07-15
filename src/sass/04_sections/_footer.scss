@@ -1,0 +1,22 @@
+@use '../01_setup/breakpoints' as *;
+/* --------------------------------------------------------
+Footers
+-------------------------------------------------------- */
+footer#site__footer {
+
+    section {
+        text-align: center;
+
+        &.grid {
+            gap: var(--flow-sm);
+        }
+
+        &.flow {
+            margin-bottom: 0;
+        }
+
+        .brand {
+            text-align: center;
+        }
+    }
+}

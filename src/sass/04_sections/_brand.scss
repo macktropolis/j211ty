@@ -1,0 +1,23 @@
+@use '../01_setup/breakpoints' as *;
+/* --------------------------------------------------------
+Brand
+-------------------------------------------------------- */
+.brand {
+
+    h1.brand__title {
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        left: -1000px;
+        top: -1000px;
+        height: 1px;
+        width: 1px;
+        text-indent: -1000px;
+    }
+
+    .logo {
+        color: var(--clr-bw-0);
+        height: auto;
+        max-width: 300px;
+    }
+}

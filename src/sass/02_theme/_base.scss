@@ -1,7 +1,10 @@
+@use '../01_setup/breakpoints' as *;
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
 }
+
 body {
     background-color: var(--clr-bw-25);
     color: var(--clr-bw-700);
@@ -20,3 +23,13 @@ h3 { font-size: var(--fs-100); }
 h4, h5, h6 { font-size: calc( var(--fs-100) * .75 ); }
 
 p { line-height: 200%; }
+
+a#anchor--home {
+    display: block;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-indent: -9999px;
+    width: 0;
+}

@@ -10,5 +10,3 @@ paginationPrevText: 'Newer posts'
 paginationNextText: 'Older posts'
 paginationAnchor: '#post-list'
 ---
-
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quam non ullam, deleniti delectus soluta ipsum impedit aut assumenda ad iure sint voluptatem voluptates repellendus. Pariatur ipsam porro earum inventore.
