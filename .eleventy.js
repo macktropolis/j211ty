@@ -1,7 +1,14 @@
 const { DateTime } = require("luxon");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
 
+    function filterTagList(tags) {
+        return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+      }
+
+    // Pass through
+    // --------------------------------------------------------   
     eleventyConfig.addPassthroughCopy('./src/assets')
     eleventyConfig.addPassthroughCopy('./src/css')
     eleventyConfig.addPassthroughCopy('./src/js')
@@ -10,25 +17,35 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/.htaccess')
 
     // Shortcodes
+    // --------------------------------------------------------
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+    // Plugins
+    // --------------------------------------------------------
+    eleventyConfig.addPlugin(pluginRss);
+
     // Filters
+    // --------------------------------------------------------
     // Format Javascript dateObj
     eleventyConfig.addFilter("postDate", (dateObj) => {
         return DateTime.fromJSDate(dateObj).plus({ days: 1 }).toLocaleString(DateTime.DATE_HUGE);
     });
+
+    // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+        return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+    });
+
+    eleventyConfig.addFilter("filterTagList", filterTagList)
+    
+    // Collections
+    // --------------------------------------------------------
 
     // Returns a collection of blog posts in reverse date order
     eleventyConfig.addCollection('blog', collection => {
         return [...collection.getFilteredByGlob('./src/blog/*.md')].reverse();
     });
 
-    function filterTagList(tags) {
-        return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
-      }
-      
-    eleventyConfig.addFilter("filterTagList", filterTagList)
-    
     // Create an array of all tags
     eleventyConfig.addCollection("tagList", function(collection) {
         let tagSet = new Set();
@@ -45,8 +62,10 @@ module.exports = function(eleventyConfig) {
         open: true,
       });
 
-      // Nunjucks Filters
-     // Use the limitTo filter to restrict the number of results returned from a collection
+    // Nunjucks Filters
+    // --------------------------------------------------------
+
+    // Use the limitTo filter to restrict the number of results returned from a collection
      eleventyConfig.addNunjucksFilter('limitTo', require('./src/js/filters/nunjucks-filter-limit-to.js'))
 
     return {
