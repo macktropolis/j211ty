@@ -8,7 +8,8 @@ author: Mack Richardson
 date: 2021-06-15
 tags:
   - sass
-  - Eleventy
+  - eleventy
+  - featured
 image: /assets/uploads/article-3.jpg
 imageAlt: This is the image caption
 ---

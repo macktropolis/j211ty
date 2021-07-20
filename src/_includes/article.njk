@@ -5,9 +5,16 @@ layout: 'base.njk'
     <div class="container__inner flow">
         <article class="meta container__content flow">
             <h1 class="article__title">{{ title }}</h1>
+            <hr>
             <p class="article__meta">
               <span class="article__author">{{ author }}</span> &bull;
-              <span class="article__date">{{ date | postDate }}</span>
+              <span class="article__date">{{ date | postDate }}</span> &nbsp;&nbsp;
+              <span class="article__tags tags">
+                {%- for tag in tags | filterTagList -%}
+                {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+                <a href="{{ tagUrl | url }}" class="post-tag {{ tag | slug }}">{{ tag }}</a>
+                {%- endfor %}
+              </span>
             </p>
             <p class="article__description">{{ description }}</p>
         </article>

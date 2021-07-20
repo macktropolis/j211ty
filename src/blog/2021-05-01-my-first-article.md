@@ -7,7 +7,7 @@ description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 author: Mack Richardson
 date: 2021-05-01
 tags:
-  - tips & tricks
+  - tips
 image: /assets/uploads/article-1.jpg
 imageAlt: This is the image caption
 ---

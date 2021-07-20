@@ -1,0 +1,432 @@
+@use 'external-stylesheets/' as *;
+/* --------------------------------------------------------
+Organisms
+
+1.0 Articles
+    └── 1.1 Blog + Articles
+2.0 Brand
+3.0 Call to Action (CTA)
+4.0 Jumbotron
+5.0 Navigation
+    ├── 5.1 Current Page
+    ├── 5.2 Base Navigation
+    └── 5.3 Navigation for Tablets+
+6.0 Pagination
+7.0 Tags
+-------------------------------------------------------- */
+
+/* --------------------------------------------------------
+1.0 Articles
+#articles
+-------------------------------------------------------- */
+.articles {
+    background-color: var(--clr-secondary-50);
+
+    .section-title {
+        color: var(--clr-secondary-700);
+        font-size: var(--fs-100);
+    }
+
+    .articles__list {
+        li {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            flex-direction: column-reverse;
+            gap: var(--flow-xl);
+            justify-content: center;
+            margin-bottom: var(--flow-xxl);
+
+            @include media('>=tablet') {
+                flex-direction: row;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            
+            @include media('>=tablet') {
+                & > *:nth-child(1) {
+                    flex: 1 1 70%;
+                    min-width: 25ch;
+                }
+        
+                & > *:nth-child(2) {
+                    flex: 1 1 30%;
+                    min-width: 15ch;
+                }
+            }
+
+            article > .btn {
+                display: block;
+
+                @include media('>=tablet') {
+                    display: inline-block;
+                }
+            }
+
+            aside > img {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+            
+        }
+    }
+}
+
+// 1.1 Blog + Articles
+// #blog #articles
+// --------------------------------------------------------
+.blog .articles {
+    background-color: transparent;
+
+    li.featured {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------
+2.0 Brand
+#brand
+-------------------------------------------------------- */
+.brand {
+
+    h1.brand__title {
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        left: -1000px;
+        top: -1000px;
+        height: 1px;
+        width: 1px;
+        text-indent: -1000px;
+    }
+
+    .logo {
+        color: var(--clr-bw-0);
+        height: auto;
+        max-width: 300px;
+    }
+}
+
+/* --------------------------------------------------------
+3.0 Call to Action
+#cta
+-------------------------------------------------------- */
+.cta {
+    background-color: none;
+
+    &:last-of-type {
+        background-color: var(--clr-bw-50);
+    }
+}
+
+/* --------------------------------------------------------
+4.0 Jumbotron
+#jumbotron
+-------------------------------------------------------- */
+#jumbotron {
+    padding: 0;
+    padding-bottom: var(--flow-xxl);
+    padding-top: var(--flow-xxl);
+    
+    .container__inner {    
+        display: flex;
+        flex-direction: column-reverse;
+        max-width: 80%;
+
+        aside > img {
+            height: 100%;
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+
+    @include media('>=desktop') {
+        .container__inner {
+            flex-wrap: wrap;
+            flex-flow: row-reverse;
+
+            & > *:nth-child(1) {
+                flex: 1 1 70%;
+                min-width: 25ch;
+            }
+
+            & > *:nth-child(2) {
+                flex: 1 1 30%;
+                min-width: 15ch;
+            }
+        }
+    }
+
+    &.article__header {
+        padding-bottom: 0;
+        padding-top: 0;
+
+        .container__inner {
+            padding-bottom: var(--flow-sm);
+            padding-top: var(--flow-sm);
+        }
+    }
+}
+
+/* --------------------------------------------------------
+5.0 Navigation
+#nav
+-------------------------------------------------------- */
+
+// 5.1 Current Page
+// #current-page
+// --------------------------------------------------------
+.nav {
+
+    &__item {
+
+        [aria-current="page"] {
+            font-weight: var(--fw-900);
+        }
+    }
+}
+
+// 5.2 Base Navigation
+// #base-nav
+// --------------------------------------------------------
+.nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: left;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+    width: 100%;
+
+    &__list {
+        background-color: var(--clr-bw-800);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            font-family: var(--ff-sans);
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+
+            a {
+                color: var(--clr-bw-0);
+                display: block;
+                font-size: var(--fs-50);
+                opacity: 0;
+                transition: opacity 100ms ease-in-out;
+                text-decoration: none;
+                text-transform: var(--tt-upper);
+            }
+
+            a::before {
+                background-color: var(--clr-bw-900);
+            }
+
+            [aria-current="page"] {
+                font-weight: var(--fw-900);
+            }
+
+        }
+    }            
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+
+    ul {
+        li {
+            a {
+                opacity: 1;
+                transition: opacity 250ms ease-in-out 250ms;
+            }
+        }
+    }
+}
+
+.nav-toggle:checked ~ .nav-toggle-label {
+    transform: rotate(-45deg);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label {
+
+    span:before {
+        opacity: 0;
+        bottom: auto;
+    }
+
+    span:after {
+        transform: rotate(90deg);
+        top: auto;
+    }
+
+}
+
+.nav-toggle-label {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1rem;
+
+    span,
+    span:before,
+    span:after {
+        background-color: var(--clr-secondary-700);
+        border-radius: 2px;
+        display: block;
+        height: 5px;
+        position: relative;
+        transition: all ease-in-out 250ms;
+        width: 1.5rem;
+    }
+
+    span:before,
+    span:after {
+        content: '';
+        position: absolute;
+    }
+
+    span:before {
+        bottom: 10px;
+    }
+
+    span:after {
+        top: 10px;
+    }
+}
+
+// 5.3 Navigation for Tablets+
+// #nav-wide
+// --------------------------------------------------------
+@include media('>=tablet') {
+
+    nav.site-nav {
+        all: unset;
+        align-items: center;
+        grid-column: 2 / span 2;
+        grid-template-columns: 1fr 1fr;
+        display: flex;
+        justify-content: flex-end;
+        
+        ul {
+            background-color: transparent;
+            display: flex;
+
+            li {
+                margin-bottom: 0;
+                margin-left: var(--flow-sm);
+
+                a {
+                    color: var(--clr-secondary-700);
+                    opacity: 1;
+                    position: relative;
+                }
+
+                a:hover {
+                    color: var(--clr-secondary-900);
+                }
+
+                a::before {
+                    content: '';
+                    display: block;
+                    height: 10px;
+                    position: absolute;
+                    top: calc( var(--flow-med) * -1 );
+                    left: 0;
+                    right: 0;
+                    transform: scaleY(0);
+                    transform-origin: top;
+                    transition: transform ease-in-out 250ms;
+                }
+
+                a:hover::before {
+                    transform: scaleY(1);
+                    
+                }
+            }
+        }
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    #site__header.scrolled {
+        nav.site-nav {
+            ul {
+                li {
+                    a::before {
+                        top: calc( var(--flow-lg) * -1 );
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* --------------------------------------------------------
+06. Pagination
+#pagination
+-------------------------------------------------------- */
+.pagination {
+    
+    &__inner.grid {
+        justify-content: start;
+        width: 100%;
+
+        a.btn[data-direction="forwards"] {
+            justify-self: start;
+        }
+
+        a.btn[data-direction="backwards"] {
+            justify-self: end;
+        }
+    }
+}
+
+/* --------------------------------------------------------
+7.0 Tags
+#tags
+-------------------------------------------------------- */
+.tags {
+
+    & > a {
+        background-color: var(--clr-secondary-100);
+        border-radius: var(--radius-med);
+        color: var(--clr-bw-0);
+        display: inline-block;
+        font-size: calc( var(--fs-100) * .5 );
+        letter-spacing: 1px;
+        margin-right: calc( var(--flow-xsm) * .5 );
+        margin-top: calc( var(--flow-xsm) & -1 );
+        padding-left: var(--flow-sm);
+        padding-right: var(--flow-sm);
+        text-transform: var(--tt-upper);
+
+        &:hover {
+            background-color: var(--clr-secondary-700);
+        }
+
+        &.featured {
+            display: none;
+        }
+    }
+
+    &.article__tags {
+
+        a {
+            margin-right: var(--flow-xsm);
+        }
+    }
+}

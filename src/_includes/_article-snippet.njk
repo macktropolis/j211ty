@@ -5,10 +5,16 @@
                 {{ item.data.title }}
             </a>
         </h3>
+        <hr>
         <p class="snippet__meta">
             <span class="snippet__author">{{ item.data.author }}</span> &bull;
-            <span class="snippet__date">{{ item.date | postDate }}</span> &bull;
-            <span class="snippet__tags">{{ item.data.tags }}</span>
+            <span class="snippet__date">{{ item.date | postDate }}</span> &nbsp;&nbsp;
+            <span class="snippet__tags tags">
+                {% for tag in item.data.tags | filterTagList %}
+                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+                <a href="{{ tagUrl | url }}" class="post-tag {{ tag | slug }}">{{ tag }}</a>
+                {% endfor %}
+            </span>
         </p>
         <p class="snippet__body">{{ item.data.description }}</p>
         <a href="{{ item.url }}" class="btn btn--primary">Continue Reading</a>

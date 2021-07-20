@@ -1,8 +1,35 @@
-@use '../01_setup/breakpoints' as *;
+@use 'external-stylesheets/' as *;
 /* --------------------------------------------------------
-Theme Styles
+Atoms
+
+1.0 Variables
+    ├── 1.1 Colors
+    ├── 1.2 Font Sizes
+    ├── 1.3 Font Weights
+    ├── 1.4 Text Transformations
+    ├── 1.5 Alignment
+    ├── 1.6 Flow Spacing
+    ├── 1.7 Opacity
+    ├── 1.8 Border Width
+    └── 1.9 Border Radius
+2.0 Mixins
+3.0 Basic HTML Elements
+    ├── 3.1 Anchors
+    └── 3.2 Images
+4.0 Layout
+    ├── 4.1 Flexbox
+    ├── 4.2 Flow
+    └── 4.3 Grid
 -------------------------------------------------------- */
-// Colors
+
+/* --------------------------------------------------------
+1.0 Variables
+#variables
+-------------------------------------------------------- */
+
+// 1.1 Colors
+// #colors
+// --------------------------------------------------------
 $colors: (
     primary: (
         700: hsl(356, 58%, 20%),
@@ -101,7 +128,9 @@ $colors: (
     background-color: transparent;
 }
 
-// Font Sizes
+// 1.2 Font Sizes
+// #font-size
+// --------------------------------------------------------
 $type-scale: (
     small: (
         50: 1rem,
@@ -157,7 +186,9 @@ $type-scale: (
     }
 }
 
-// Font Weights
+// 1.3 Font Weights
+// #font-weight
+// --------------------------------------------------------
 $font-weight: (
     900: 900,
     700: 700,
@@ -180,7 +211,9 @@ $font-weight: (
     .fw-#{$weight} { font-weight: #{$value} };
 }
 
-// Text Transformations
+// 1.4 Text Transformations
+// #text-transformations
+// --------------------------------------------------------
 $text-trans: (
     upper: uppercase,
     lower: lowercase,
@@ -202,7 +235,9 @@ $text-trans: (
     .tt-#{$trans} { text-transform: #{$value} };
 }
 
-// Text Alignments
+// 1.5 Alignment
+// #align
+// --------------------------------------------------------
 $text: (
     left: left,
     center: center,
@@ -215,13 +250,17 @@ $text: (
     .text-#{$align} { text-align: #{$value} };
 }
 
-// Spacing
+// 1.6 Flow Spacing
+// #flow #spacing
+// --------------------------------------------------------
 $flow-space: (
     xxl: 5rem,
     xl: 4rem,
     lg: 3rem,
     med: 2rem,
     sm: 1rem,
+    xsm: 0.5rem,
+    zed: 0,
     auto: "auto"
 );
 
@@ -233,7 +272,24 @@ $flow-space: (
     }
 }
 
-// Opacity
+// Flow Space Classes
+// i.e. class="flow-xxl"
+@each $flow, $value in $flow-space {
+    .m-all-#{$flow} { margin: #{$value} };
+    .m-bm-#{$flow} { margin-bottom: #{$value} };
+    .m-rt-#{$flow} { margin-right: #{$value} };
+    .m-lt-#{$flow} { margin-left: #{$value} };
+    .m-tp-#{$flow} { margin-top: #{$value} };
+    .p-all-#{$flow} { padding: #{$value} };
+    .p-bm-#{$flow} { padding-bottom: #{$value} };
+    .p-rt-#{$flow} { padding-right: #{$value} };
+    .p-lt-#{$flow} { padding-left: #{$value} };
+    .p-tp-#{$flow} { padding-top: #{$value} };
+}
+
+// 1.7 Opacity
+// #opacity
+// --------------------------------------------------------
 // i.e. --op-50
 $opacity: (
     100: 1.0,
@@ -247,7 +303,10 @@ $opacity: (
 @each $op-setting, $value in $opacity {
     .op-#{$op-setting} { opacity: #{$value} };
 }
-// Border Width
+
+// 1.8 Border Width
+// #border-width
+// --------------------------------------------------------
 $border-width: (
     xxl: 3rem,
     xl: 2rem,
@@ -262,7 +321,10 @@ $border-width: (
         --border-#{$width}: #{$value};
     }
 }
-// Border Radius
+
+// 1.9 Border Radius
+// #border-radius
+// --------------------------------------------------------
 $border-radius: (
     xxl: 2rem,
     xl: 1.5rem,
@@ -275,5 +337,126 @@ $border-radius: (
 :root {
     @each $radius, $value in $border-radius {
         --radius-#{$radius}: #{$value};
+    }
+}
+
+/* --------------------------------------------------------
+2.0 Mixins
+#mixins
+-------------------------------------------------------- */
+@mixin center-margins {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --------------------------------------------------------
+3.0 Basic HTML Elements
+#html
+-------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    background-color: var(--clr-bw-25);
+    color: var(--clr-bw-700);
+    font-family: var(--ff-sans);
+    font-size: var(--fs-50);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    line-height: 150%;
+    margin-bottom: var(--flow-sm);
+}
+
+h1 { font-size: var(--fs-300); }
+h2 { font-size: var(--fs-200); }
+h3 { font-size: var(--fs-100); }
+h4, h5, h6 { font-size: calc( var(--fs-100) * .75 ); }
+
+p { 
+    line-height: 200%; 
+}
+
+hr {
+    background-color: var(--clr-bw-50);
+    margin-bottom: var(--flow-sm);
+    opacity: 0.25;
+}
+
+// 3.1  Anchors
+// #anchors
+// --------------------------------------------------------
+a#anchor--home {
+    display: block;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-indent: -9999px;
+    width: 0;
+}
+
+// 3.2  Images
+// #images
+// --------------------------------------------------------
+img {
+
+    &.bg__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        
+        &.cover {
+            object-fit: cover;
+        }
+
+        &.contain {
+            object-fit: contain;
+        }
+    }
+}
+
+/* --------------------------------------------------------
+4.0 Layout
+#layout
+-------------------------------------------------------- */
+
+// 4.1  Flexbox
+// #flexbox
+// --------------------------------------------------------
+.flex {
+    display: flex;
+    align-items: center;
+    gap: var(--flow-lg);
+    flex-direction: row;
+    justify-content: center;
+}
+
+// 4.2  Flow
+// #flow
+// --------------------------------------------------------
+.flow {
+    margin-bottom: var(--flow-sm);
+    padding: var(--flow-med) var(--flow-sm);
+}
+
+// 4.3  Grid
+// #grid
+// --------------------------------------------------------
+.grid {
+    display: grid;
+    align-items: center;
+    gap: var(--flow-sm);
+    grid-template-columns: auto;
+    justify-content: center;
+
+    & > .center {
+        justify-self: center;
     }
 }

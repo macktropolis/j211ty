@@ -30,27 +30,8 @@
     --ff-awesome: 'FontAwesome';
 }
 
-// Setup Styles
-@import "01_setup/destyle";
-
 // Theme Styles
-@import "02_theme/base";
-@import "02_theme/theme";
-
-// Utility Styles
-@import "03_utility/mixins";
-@import "03_utility/layout";
-@import "03_utility/content";
-@import "03_utility/buttons";
-@import "03_utility/images";
-
-// Section Styles
-@import "04_sections/header";
-@import "04_sections/footer";
-@import "04_sections/brand";
-@import "04_sections/nav";
-@import "04_sections/jumbotron";
-@import "04_sections/blog";
-@import "04_sections/articles";
-@import "04_sections/cta";
-@import "04_sections/pagination";
+@import "atoms";
+@import "molecules";
+@import "organisms";
+@import "templates";

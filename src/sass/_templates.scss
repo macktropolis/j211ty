@@ -1,0 +1,108 @@
+@use 'external-stylesheets/' as *;
+/* --------------------------------------------------------
+Templates
+
+1.0 Site Content
+2.0 Container
+3.0 Site Header
+4.0 Site Footer
+-------------------------------------------------------- */
+
+/* --------------------------------------------------------
+1.0 Site Content
+#site-content
+-------------------------------------------------------- */
+.site__content {
+    padding-top: calc( var( --flow-xxl ) * 1 );
+    width: 100%;
+
+    & > section {
+        .container {
+            padding: var( --flow-xxl );
+            @include center-margins;
+        }
+    }
+}
+
+/* --------------------------------------------------------
+2.0 Container
+#container
+-------------------------------------------------------- */
+.container {
+    position: relative;
+
+    &.bg {
+        background-color: var(--clr-bw-900);
+
+        &.invert {
+            color: var(--clr-bw-0);
+        }
+    }
+
+    &__inner {
+        padding: var( --flow-xl );
+        position: relative;
+        width: 90%;
+        z-index: 1;
+
+        @include center-margins;
+    }
+}
+
+/* --------------------------------------------------------
+3.0 Site Header
+#site-header
+-------------------------------------------------------- */
+header#site__header {
+    display: grid;
+    padding: 1rem 3rem;
+    position: fixed;
+    text-align: center;
+    @include media('>=tablet') {
+        text-align: left;
+    }
+    transition: all ease-in-out 255ms;
+    width: 100%;
+    z-index: 999;
+    
+    nav.site-nav {
+
+        ul {
+            padding: 0;
+
+            li {
+                padding: var(--flow-sm) calc(var(--flow-sm) * .5);
+            }
+        }
+    }
+
+    &.scrolled {
+        background-color: var(--clr-bw-0);
+        box-shadow: 0 0 1rem var(--clr-bw-600);
+        padding: var(--flow-med) var(--flow-sm);
+    }    
+
+}
+
+/* --------------------------------------------------------
+4.0 Site Footer
+#site-footer
+-------------------------------------------------------- */
+footer#site__footer {
+
+    section {
+        text-align: center;
+
+        &.grid {
+            gap: var(--flow-sm);
+        }
+
+        &.flow {
+            margin-bottom: 0;
+        }
+
+        .brand {
+            text-align: center;
+        }
+    }
+}
