@@ -16,21 +16,12 @@ Jammin' to Eleventy is a Jamstack site framework meant to get your site up and r
 
 1. Open `src/_data/site.json` and adjust the values to your details.
 
-1. Review the [styling documentation](https://5t3ph.github.io/html-sass-jumpstart/) for the included minimal
-   Sass framework, particularly the theme variables, to quickly customize the starter.
-
-1. Edit `_includes/home.njk` to change the home page - including changing the template type if desired -
-   and then create content within `_pages` using any templating format you prefer to add content.
-
-1. Check out the [About page](https://11ty-netlify-jumpstart.netlify.app/about/) for expanded details on included features of this starter.
-
-1. Review the [11ty documentation](https://11ty.dev) to more deeply apply customizations, including
+2. Review the [11ty documentation](https://11ty.dev) to more deeply apply customizations, including
    adding custom data sources and reviewing what template languages are available.
 
 ### Is Netlify hosting required?
 
-It's not required, but highly recommended, and is also how the build process is setup to run
-against.
+It's not required, but highly recommended. The build process is setup to run using Netlify.
 
 ## Development Scripts
 
@@ -46,7 +37,5 @@ Use this as the "Publish command" if needed by hosting such as Netlify.
 
 ## Feedback welcome!
 
-You can [file it as an issue](https://github.com/5t3ph/11ty-netlify-jumpstart/issues).
-
-[![Buy me a coffee](https://cdn.buymeacoffee.com/buttons/default-violet.png)](https://www.buymeacoffee.com/moderncss)
+You can [file it as an issue](https://github.com/macktropolis/jammin-to-eleventy/issues).
 

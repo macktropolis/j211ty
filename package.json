@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/macktropolis/website-qube-consulting.git"
+    "url": "git+https://github.com/macktropolis/jammin-to-eleventy.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/macktropolis/website-qube-consulting/issues"
+    "url": "https://github.com/macktropolis/jammin-to-eleventy/issues"
   },
-  "homepage": "https://github.com/macktropolis/website-qube-consulting#readme",
+  "homepage": "https://github.com/macktropolis/jammin-to-eleventy#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
