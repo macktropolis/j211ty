@@ -1,95 +1,68 @@
 @use 'external-stylesheets/' as *;
 /* --------------------------------------------------------
-Organisms
-
-1.0 Articles
-    └── 1.1 Blog + Articles
-2.0 Brand
-3.0 Call to Action (CTA)
-4.0 Jumbotron
-5.0 Navigation
-    ├── 5.1 Current Page
-    ├── 5.2 Base Navigation
-    └── 5.3 Navigation for Tablets+
-6.0 Pagination
-7.0 Tags
+5.0 Components
+    ├── 5.1 Buttons
+    ├── 5.2 Brand
+    ├── 5.3 Call to Action
+    ├── 5.4 Jumbotron
+    ├── 5.5 Naviation
+    |   ├── 5.5.1 Current Page
+    |   ├── 5.5.2 Base Navigation
+    |   └── 5.5.3 Navigation for Tablet+ Screen Sizes
+    ├── 5.6 Pagination
+    ├── 5.7 Site Header
+    └── 5.8 Site Footer
 -------------------------------------------------------- */
 
 /* --------------------------------------------------------
-1.0 Articles
-#articles
+5.0 Components
+#components
 -------------------------------------------------------- */
-.articles {
-    background-color: var(--clr-secondary-50);
 
-    .section-title {
-        color: var(--clr-secondary-700);
-        font-size: var(--fs-100);
+// 5.1 Buttons
+// #buttons
+// --------------------------------------------------------
+.btn {
+    background-color: var(--clr-secondary-100);
+    color: var(--clr-bw-0);
+    display: inline-block;
+    clear: both;
+    letter-spacing: 1px;
+    padding: var(--flow-sm) var(--flow-xl);
+    transition: all ease-in-out 255ms;
+    text-align: center;
+    text-decoration: none;
+    text-transform: var(--tt-upper);
+
+    &:hover {
+        background-color: var(--clr-secondary-700);
     }
 
-    .articles__list {
-        li {
-            display: flex;
-            align-items: flex-start;
-            flex-wrap: nowrap;
-            flex-direction: column-reverse;
-            gap: var(--flow-xl);
-            justify-content: center;
-            margin-bottom: var(--flow-xxl);
-
-            @include media('>=tablet') {
-                flex-direction: row;
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-            
-            @include media('>=tablet') {
-                & > *:nth-child(1) {
-                    flex: 1 1 70%;
-                    min-width: 25ch;
-                }
+    &.stop {
+        background-color: var(--clr-stop-400);
+        color: var(--clr-stop-50);
         
-                & > *:nth-child(2) {
-                    flex: 1 1 30%;
-                    min-width: 15ch;
-                }
-            }
-
-            article > .btn {
-                display: block;
-
-                @include media('>=tablet') {
-                    display: inline-block;
-                }
-            }
-
-            aside > img {
-                height: 100%;
-                object-fit: cover;
-                width: 100%;
-            }
-            
+        &:hover {
+            background-color: var(--clr-stop-100);
+            color: var(--clr-stop-400);
         }
     }
-}
 
-// 1.1 Blog + Articles
-// #blog #articles
-// --------------------------------------------------------
-.blog .articles {
-    background-color: transparent;
+    &.go {
+        background-color: var(--clr-go-400);
+        color: var(--clr-go-50);
 
-    li.featured {
-        display: none;
+        &:hover {
+            background-color: var(--clr-go-100);
+            color: var(--clr-go-700);
+        }
     }
+    
 }
 
-/* --------------------------------------------------------
-2.0 Brand
-#brand
--------------------------------------------------------- */
+// 5.2 Brand
+// #brand
+// --------------------------------------------------------
 .brand {
 
     h1.brand__title {
@@ -110,22 +83,24 @@ Organisms
     }
 }
 
-/* --------------------------------------------------------
-3.0 Call to Action
-#cta
--------------------------------------------------------- */
+// 5.3 Call to Action
+// #cta
+// --------------------------------------------------------
 .cta {
     background-color: none;
 
     &:last-of-type {
         background-color: var(--clr-bw-50);
     }
+
+    & > .container__inner {
+        max-width: var(--width-max);
+    }
 }
 
-/* --------------------------------------------------------
-4.0 Jumbotron
-#jumbotron
--------------------------------------------------------- */
+// 5.4 Jumbotron
+// #jumbotron
+// --------------------------------------------------------
 #jumbotron {
     padding: 0;
     padding-bottom: var(--flow-xxl);
@@ -134,7 +109,7 @@ Organisms
     .container__inner {    
         display: flex;
         flex-direction: column-reverse;
-        max-width: 80%;
+        max-width: var(--width-max);
 
         aside > img {
             height: 100%;
@@ -171,12 +146,11 @@ Organisms
     }
 }
 
-/* --------------------------------------------------------
-5.0 Navigation
-#nav
--------------------------------------------------------- */
+// 5.5 Navigation
+// #cta
+// --------------------------------------------------------
 
-// 5.1 Current Page
+// 5.5.1 Current Page
 // #current-page
 // --------------------------------------------------------
 .nav {
@@ -189,7 +163,7 @@ Organisms
     }
 }
 
-// 5.2 Base Navigation
+// 5.5.2 Base Navigation
 // #base-nav
 // --------------------------------------------------------
 .nav {
@@ -306,7 +280,7 @@ Organisms
     }
 }
 
-// 5.3 Navigation for Tablets+
+// 5.5.3 Navigation for Tablets+ Screen Sizes
 // #nav-wide
 // --------------------------------------------------------
 @include media('>=tablet') {
@@ -375,10 +349,9 @@ Organisms
     }
 }
 
-/* --------------------------------------------------------
-06. Pagination
-#pagination
--------------------------------------------------------- */
+// 5.6 Pagination
+// #pagination
+// --------------------------------------------------------
 .pagination {
     
     &__inner.grid {
@@ -395,38 +368,58 @@ Organisms
     }
 }
 
-/* --------------------------------------------------------
-7.0 Tags
-#tags
--------------------------------------------------------- */
-.tags {
+// 5.7 Site Header
+// #site-header
+// --------------------------------------------------------
+header#site__header {
+    display: grid;
+    padding: 1rem 3rem;
+    position: fixed;
+    text-align: center;
+    @include media('>=tablet') {
+        text-align: left;
+    }
+    transition: all ease-in-out 255ms;
+    width: 100%;
+    z-index: 999;
+    
+    nav.site-nav {
 
-    & > a {
-        background-color: var(--clr-secondary-100);
-        border-radius: var(--radius-med);
-        color: var(--clr-bw-0);
-        display: inline-block;
-        font-size: calc( var(--fs-100) * .5 );
-        letter-spacing: 1px;
-        margin-right: calc( var(--flow-xsm) * .5 );
-        margin-top: calc( var(--flow-xsm) & -1 );
-        padding-left: var(--flow-sm);
-        padding-right: var(--flow-sm);
-        text-transform: var(--tt-upper);
+        ul {
+            padding: 0;
 
-        &:hover {
-            background-color: var(--clr-secondary-700);
-        }
-
-        &.featured {
-            display: none;
+            li {
+                padding: var(--flow-sm) calc(var(--flow-sm) * .5);
+            }
         }
     }
 
-    &.article__tags {
+    &.scrolled {
+        background-color: var(--clr-bw-0);
+        box-shadow: 0 0 1rem var(--clr-bw-600);
+        padding: var(--flow-med) var(--flow-sm);
+    }    
 
-        a {
-            margin-right: var(--flow-xsm);
+}
+
+// 5.8 Site Footer
+// #site-footer
+// --------------------------------------------------------
+footer#site__footer {
+
+    section {
+        text-align: center;
+
+        &.grid {
+            gap: var(--flow-sm);
+        }
+
+        &.flow {
+            margin-bottom: 0;
+        }
+
+        .brand {
+            text-align: center;
         }
     }
 }
