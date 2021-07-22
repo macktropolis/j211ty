@@ -9,6 +9,7 @@ Thumbs.db
 .env
 .cache
 .vscode
+notes.md
 #ToDo: Comment out the public directory if you're planning to integrate with Netlify CMS
 public
 
