@@ -11,7 +11,7 @@
                 Written by 
                 <span class="meta__author">{{ item.data.author }}</span> on 
                 <span class="meta__date">{{ item.date | postDate }}</span>  
-                <span class="meta__tags tags"> in 
+                <span class="meta__tags"> in 
                     {% for tag in item.data.tags | filterTagList %}
                     {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
                     <a href="{{ tagUrl | url }}" class="post-tag {{ tag | slug }}">{{ tag }}</a>

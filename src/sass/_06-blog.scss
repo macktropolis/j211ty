@@ -25,8 +25,10 @@
     }
 
     .articles__list {
+        padding: 0;
+
         li {
-            margin-bottom: var(--flow-xxl);
+            margin-bottom: calc( var(--flow-xxl) * 2 );
 
             &:last-of-type {
                 margin-bottom: 0;
@@ -84,10 +86,6 @@
 // --------------------------------------------------------
 .blog .articles {
     background-color: transparent;
-
-    li.featured {
-        display: none;
-    }
 }
 
 // 6.2 Article Meta
@@ -114,8 +112,37 @@
 // #tags
 // --------------------------------------------------------
 .tags {
+    margin-bottom: var(--flow-xxl);
+    padding: 0;
 
-    & > a {
+    a {
+        background-color: var(--clr-secondary-100);
+        border-radius: var(--radius-med);
+        color: var(--clr-bw-0);
+        display: inline-block;
+        font-size: calc( var(--fs-100) * .5 );
+        letter-spacing: 1px;
+        margin-right: calc( var(--flow-xsm) * .5 );
+        margin-top: calc( var(--flow-xsm) & -1 );
+        padding: var(--flow-sm);
+        text-transform: var(--tt-upper);
+
+        &:hover {
+            background-color: var(--clr-secondary-700);
+        }
+    }
+
+    &.article__tags {
+
+        a {
+            margin-right: var(--flow-xsm);
+        }
+    }
+}
+
+.meta__tags {
+
+    a {
         background-color: var(--clr-secondary-100);
         border-radius: var(--radius-med);
         color: var(--clr-bw-0);
@@ -130,17 +157,6 @@
 
         &:hover {
             background-color: var(--clr-secondary-700);
-        }
-
-        &.featured {
-            display: none;
-        }
-    }
-
-    &.article__tags {
-
-        a {
-            margin-right: var(--flow-xsm);
         }
     }
 }

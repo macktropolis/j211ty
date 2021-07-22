@@ -9,19 +9,6 @@ pageClass: 'blog'
 
 <section class="articles all" id="article-list">
     <div class="container__inner flow grid">
-
-        <ul role="list" class="tags flow">
-        {% for tag in collections.tagList %}
-            <li class="post-list__item leading-tight measure-long {{ tag | slug }}">
-                <article class="snippet">
-                    {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-                    <h3 class="snippet__title">
-                        # <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-                    </h3>
-                </article>
-            </li>
-        {% endfor %}
-        </ul>
-
+        {% include "_tags-list.njk" %}
     </div>  
 </section>

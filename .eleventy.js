@@ -4,7 +4,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function(eleventyConfig) {
 
     function filterTagList(tags) {
-        return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+        return (tags || []).filter(tag => ["all", "nav", "post", "posts", "pages", "featured"].indexOf(tag) === -1);
       }
 
     // Pass through

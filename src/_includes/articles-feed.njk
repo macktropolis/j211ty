@@ -17,6 +17,9 @@ pageClass: 'blog'
 
   <section class="articles all" id="article-list">
     <div class="container__inner flow grid">
+
+      {{ content | safe }}
+      
       {% if postListHeadline %}
       <h2 class="headline measure-micro" data-highlight="primary">
         {{ postListHeadline }}
