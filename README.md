@@ -7,7 +7,7 @@
 Jammin' to Eleventy is a Jamstack site framework meant to get your site up and running quickly with 11ty and SASS.
 ## Quick Start
 
-1. [Generate a repo from this template](https://github.com/macktropolis/jammin-to-eleventy/generate)
+1. [Generate a repo from this template](https://github.com/macktropolis/j211ty/generate)
    which will copy this project into your own new repo.
 
 1. Once cloned, run `npm install` to install 11ty and other dependencies. Then run `npm start` to run both 11ty and sass in watch
@@ -37,5 +37,5 @@ Use this as the "Publish command" if needed by hosting such as Netlify.
 
 ## Feedback welcome!
 
-You can [file it as an issue](https://github.com/macktropolis/jammin-to-eleventy/issues).
+You can [file it as an issue](https://github.com/macktropolis/j211ty/issues).
 
