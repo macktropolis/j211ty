@@ -3,10 +3,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
 
-    function filterTagList(tags) {
-        return (tags || []).filter(tag => ["all", "nav", "post", "posts", "pages", "featured"].indexOf(tag) === -1);
-      }
-
     // Pass through
     // --------------------------------------------------------   
     eleventyConfig.addPassthroughCopy('./src/assets')
@@ -35,8 +31,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('htmlDateString', (dateObj) => {
         return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
     });
-
-    eleventyConfig.addFilter("filterTagList", filterTagList)
     
     // Collections
     // --------------------------------------------------------
@@ -45,6 +39,24 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addCollection('blog', collection => {
         return [...collection.getFilteredByGlob('./src/blog/*.md')].reverse();
     });
+
+    // Tags
+    // --------------------------------------------------------
+    
+    // Create a list of tags, excluding certain tags
+    function filterTagList(tags) {
+        return (tags || []).filter(tag => [
+            "all", 
+            "nav", 
+            "post", 
+            "posts", 
+            "pages", 
+            "featured"
+        ].indexOf(tag) === -1);
+    }
+
+    // Add the Eleventy Filter for tags
+    eleventyConfig.addFilter("filterTagList", filterTagList)
 
     // Create an array of all tags
     eleventyConfig.addCollection('tagList', collection => {
