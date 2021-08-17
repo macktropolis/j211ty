@@ -1,12 +1,28 @@
-<div class="page-header bgc-go-50">
+<div class="page-header bgc-primary-500">
   <div class="container__inner flow">
+
     <h1 class="page-header__heading headline m-bm-zed" data-highlight="primary">
       {{ title }}
     </h1>
-    {% if description %}
+
+    {%- if type == 'post' -%}
+      <p class="article__meta meta">
+        <span class="meta__author">{{ author }}</span> &bull;  
+        <span class="meta__date">{{ date | postDate }}</span> 
+        <span class="meta__tags tags"> &bull;&nbsp;
+          {%- for tag in tags | filterTagList -%}
+          {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+          <a href="{{ tagUrl | url }}" class="post-tag {{ tag | slug }}">#{{ tag }}</a>
+          {% endfor %}
+        </span>
+      </p>
+    {%- endif -%}
+
+    {%- if description -%}
     <p class="page-header__summary measure-long m-tp-sm m-bm-zed">
       {{ description }}
     </p>
-    {% endif %}
+    {%- endif -%}
+
   </div>
 </div>

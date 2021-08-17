@@ -1,11 +1,12 @@
 <section class="articles latest">
     <div class="container__inner flow grid">
         <h2 class="section-title text-center tt-upper">Latest Articles</h2>
+        <hr class="h-rule bgc-secondary-500 m-b-500">
         <ul role="list" class="articles__list flow">
             {%- for item in collections.blog | limitTo(3) -%}
                {% include '_article-snippet.njk' %}
             {%- endfor -%}
         </ul>
-        <a href="/blog/" class="btn center">See All Articles</a>
+        <a href="/blog/" class="btn center m-t-700">See All Articles</a>
     </div>
 </section>

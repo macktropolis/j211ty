@@ -23,12 +23,12 @@
 // #buttons
 // --------------------------------------------------------
 .btn {
-    background-color: var(--clr-secondary-100);
-    color: var(--clr-bw-0);
+    background-color: var(--clr-secondary-500);
+    color: var(--clr-bw-100);
     display: inline-block;
     clear: both;
     letter-spacing: 1px;
-    padding: var(--flow-sm) var(--flow-xl);
+    padding: var(--flow-200) var(--flow-500);
     transition: all ease-in-out 255ms;
     text-align: center;
     text-decoration: none;
@@ -38,23 +38,19 @@
         background-color: var(--clr-secondary-700);
     }
 
-    &.stop {
-        background-color: var(--clr-stop-400);
-        color: var(--clr-stop-50);
+    &.error {
+        background-color: var(--clr-error-500);
         
         &:hover {
-            background-color: var(--clr-stop-100);
-            color: var(--clr-stop-400);
+            background-color: var(--clr-error-900);
         }
     }
 
-    &.go {
-        background-color: var(--clr-go-400);
-        color: var(--clr-go-50);
+    &.ok {
+        background-color: var(--clr-ok-500);
 
         &:hover {
-            background-color: var(--clr-go-100);
-            color: var(--clr-go-700);
+            background-color: var(--clr-ok-900);
         }
     }
     
@@ -64,6 +60,8 @@
 // #brand
 // --------------------------------------------------------
 .brand {
+    display: flex;
+    align-items: center;
 
     h1.brand__title {
         opacity: 0;
@@ -77,7 +75,7 @@
     }
 
     .logo {
-        color: var(--clr-bw-0);
+        color: var(--clr-bw-100);
         height: auto;
         max-width: 300px;
     }
@@ -87,14 +85,11 @@
 // #cta
 // --------------------------------------------------------
 .cta {
-    background-color: none;
-
-    &:last-of-type {
-        background-color: var(--clr-bw-50);
-    }
+    background-color: var(--clr-primary-900);
+    color: var(--clr-bw-100);
 
     & > .container__inner {
-        max-width: var(--width-max);
+        max-width: var(--width-900);
     }
 }
 
@@ -103,13 +98,17 @@
 // --------------------------------------------------------
 #jumbotron {
     padding: 0;
-    padding-bottom: var(--flow-xxl);
-    padding-top: var(--flow-xxl);
+    padding-bottom: var(--flow-900);
+    padding-top: var(--flow-900);
     
     .container__inner {    
         display: flex;
         flex-direction: column-reverse;
-        max-width: var(--width-max);
+        margin: 0;
+        max-width: var(--width-900);
+        padding: 0;
+
+        @include center-margins;
 
         aside > img {
             height: 100%;
@@ -140,8 +139,8 @@
         padding-top: 0;
 
         .container__inner {
-            padding-bottom: var(--flow-sm);
-            padding-top: var(--flow-sm);
+            padding-bottom: var(--flow-200);
+            padding-top: var(--flow-200);
         }
     }
 }
@@ -177,28 +176,30 @@
     width: 100%;
 
     &__list {
-        background-color: var(--clr-bw-800);
         margin: 0;
         padding: 0;
         list-style: none;
 
         li {
             font-family: var(--ff-sans);
-            margin-bottom: 1rem;
-            margin-left: 1rem;
 
             a {
-                color: var(--clr-bw-0);
+                color: var(--clr-secondary-500);
                 display: block;
                 font-size: var(--fs-50);
                 opacity: 0;
                 transition: opacity 100ms ease-in-out;
+                text-align: center;
                 text-decoration: none;
                 text-transform: var(--tt-upper);
             }
 
+            a:hover {
+                color: var(--clr-secondary-400);
+            }
+
             a::before {
-                background-color: var(--clr-bw-900);
+                background-color: var(--clr-bw-100);
             }
 
             [aria-current="page"] {
@@ -214,6 +215,8 @@
 }
 
 .nav-toggle:checked ~ nav {
+    background-color: var(--clr-surface-100);
+    box-shadow: 0 0 1rem var(--clr-surface-900);
     transform: scale(1,1);
 
     ul {
@@ -256,7 +259,7 @@
     span,
     span:before,
     span:after {
-        background-color: var(--clr-secondary-700);
+        background-color: var(--clr-secondary-500);
         border-radius: 2px;
         display: block;
         height: 5px;
@@ -280,6 +283,16 @@
     }
 }
 
+#site__header.scrolled {
+    .nav-toggle-label {
+        span,
+        span:before,
+        span:after {
+            background-color: var(--clr-surface-900);
+        }
+    }
+}
+
 // 5.5.3 Navigation for Tablets+ Screen Sizes
 // #nav-wide
 // --------------------------------------------------------
@@ -299,24 +312,20 @@
 
             li {
                 margin-bottom: 0;
-                margin-left: var(--flow-sm);
+                margin-left: var(--flow-200);
 
                 a {
-                    color: var(--clr-secondary-700);
                     opacity: 1;
                     position: relative;
                 }
 
-                a:hover {
-                    color: var(--clr-secondary-900);
-                }
-
                 a::before {
+                    background-color: var(--clr-secondary-500);
                     content: '';
                     display: block;
                     height: 10px;
                     position: absolute;
-                    top: calc( var(--flow-med) * -1 );
+                    top: calc( var(--flow-400) * -1 );
                     left: 0;
                     right: 0;
                     transform: scaleY(0);
@@ -337,11 +346,12 @@
     }
 
     #site__header.scrolled {
+
         nav.site-nav {
             ul {
                 li {
                     a::before {
-                        top: calc( var(--flow-lg) * -1 );
+                        top: calc( var(--flow-400) * -1 );
                     }
                 }
             }
@@ -364,62 +374,6 @@
 
         a.btn[data-direction="backwards"] {
             justify-self: end;
-        }
-    }
-}
-
-// 5.7 Site Header
-// #site-header
-// --------------------------------------------------------
-header#site__header {
-    display: grid;
-    padding: 1rem 3rem;
-    position: fixed;
-    text-align: center;
-    @include media('>=tablet') {
-        text-align: left;
-    }
-    transition: all ease-in-out 255ms;
-    width: 100%;
-    z-index: 999;
-    
-    nav.site-nav {
-
-        ul {
-            padding: 0;
-
-            li {
-                padding: var(--flow-sm) calc(var(--flow-sm) * .5);
-            }
-        }
-    }
-
-    &.scrolled {
-        background-color: var(--clr-bw-0);
-        box-shadow: 0 0 1rem var(--clr-bw-600);
-        padding: var(--flow-med) var(--flow-sm);
-    }    
-
-}
-
-// 5.8 Site Footer
-// #site-footer
-// --------------------------------------------------------
-footer#site__footer {
-
-    section {
-        text-align: center;
-
-        &.grid {
-            gap: var(--flow-sm);
-        }
-
-        &.flow {
-            margin-bottom: 0;
-        }
-
-        .brand {
-            text-align: center;
         }
     }
 }

@@ -23,78 +23,75 @@
 // --------------------------------------------------------
 $colors: (
     primary: (
-        700: hsl(356, 58%, 20%),
-        400: hsl(356, 58%, 50%),
-        100: hsl(356, 58%, 80%),
-        50: hsl(356, 58%, 95%),
+        900: hsl(0, 0%, 10%),
+        800: hsl(0, 0%, 20%),
+        700: hsl(0, 0%, 30%),
+        600: hsl(0, 0%, 40%),
+        500: hsl(0, 0%, 50%),
+        400: hsl(0, 0%, 60%),
+        300: hsl(0, 0%, 70%),
+        200: hsl(0, 0%, 80%),
+        100: hsl(0, 0%, 90%),
+        50: hsl(0, 0%, 100%),
     ),
     secondary: (
-        700: hsl(183, 47%, 28%),
-        400: hsl(183, 47%, 43%),
-        100: hsl(183, 47%, 58%),
-        50: hsl(183, 47%, 90%),
-    ),
-    tertiary: (
-        700: hsl(25, 96%, 45%),
-        400: hsl(25, 96%, 60%),
-        100: hsl(25, 96%, 75%),
-        50: hsl(25, 96%, 95%),
-    ),
-    quaternary: (
-        700: hsl(260, 42%, 31%),
-        400: hsl(260, 42%, 46%),
-        100: hsl(260, 42%, 61%),
-        50: hsl(260, 42%, 95%),
-    ),
-    quinary: (
-        700: hsl(40, 96%, 12%),
-        400: hsl(40, 96%, 27%),
-        100: hsl(40, 96%, 42%),
-        50: hsl(40, 96%, 95%),
-    ),
-    senary: (
-        700: hsl(33, 49%, 4%),
-        400: hsl(33, 49%, 19%),
-        100: hsl(33, 49%, 34%),
-        50: hsl(33, 49%, 95%),
-    ),
-    bw: (
-        900: hsl(218, 12%, 0%),
-        800: hsl(218, 12%, 10%),
-        700: hsl(218, 12%, 20%),
-        600: hsl(218, 12%, 30%),
-        500: hsl(218, 12%, 40%),
-        400: hsl(218, 12%, 50%),
-        300: hsl(218, 12%, 60%),
-        200: hsl(218, 12%, 70%),
-        100: hsl(218, 12%, 80%),
-        75: hsl(218, 12%, 85%),
-        50: hsl(218, 12%, 90%),
-        25: hsl(218, 12%, 95%),
-        0: hsl(218, 12%, 100%),     
-    ),
-    stop: (
-        700: hsl(356, 58%, 20%),
-        400: hsl(356, 58%, 50%),
-        100: hsl(356, 58%, 80%),
+        900: hsl(356, 58%, 10%),
+        800: hsl(356, 58%, 20%),
+        700: hsl(356, 58%, 30%),
+        600: hsl(356, 58%, 40%),
+        500: hsl(356, 58%, 50%),
+        400: hsl(356, 58%, 60%),
+        300: hsl(356, 58%, 70%),
+        200: hsl(356, 58%, 80%),
+        100: hsl(356, 58%, 90%),
         50: hsl(356, 58%, 95%),
     ),
-    caution: (
-        700: hsl(52, 86%, 38%),
-        400: hsl(52, 86%, 58%),
-        100: hsl(52, 86%, 78%),
-        50: hsl(52, 86%, 98%),
+    bg: (
+        900: hsl(218, 12%, 10%),
+        800: hsl(218, 12%, 20%),
+        700: hsl(218, 12%, 30%),
+        600: hsl(218, 12%, 40%),
+        500: hsl(218, 12%, 50%),
+        400: hsl(218, 12%, 60%),
+        300: hsl(218, 12%, 70%),
+        200: hsl(218, 12%, 80%),
+        100: hsl(218, 12%, 90%),
     ),
-    go: (
-        700: hsl(80, 60%, 15%),
-        400: hsl(80, 60%, 35%),
-        100: hsl(80, 60%, 55%),
-        50: hsl(80, 60%, 75%),
+    surface: (
+        900: hsl(218, 12%, 10%),
+        800: hsl(218, 12%, 20%),
+        700: hsl(218, 12%, 30%),
+        600: hsl(218, 12%, 40%),
+        500: hsl(218, 12%, 50%),
+        400: hsl(218, 12%, 60%),
+        300: hsl(218, 12%, 70%),
+        200: hsl(218, 12%, 80%),
+        100: hsl(218, 12%, 90%),
+    ),
+    bw: (
+        900: hsl(218, 12%, 10%),
+        800: hsl(218, 12%, 20%),
+        700: hsl(218, 12%, 30%),
+        600: hsl(218, 12%, 40%),
+        500: hsl(218, 12%, 50%),
+        400: hsl(218, 12%, 60%),
+        300: hsl(218, 12%, 70%),
+        200: hsl(218, 12%, 80%),
+        100: hsl(218, 12%, 90%),
+    ),
+    error: ( 
+        500: hsl(356, 58%, 50%),
+    ),
+    warning: (
+        500: hsl(52, 86%, 58%),
+    ),
+    ok: (
+        500: hsl(80, 60%, 35%),
     ),
 );
 :root {
     // Color CSS Variables
-    // i.e. --clr-primary-400
+    // i.e. --clr-primary-normal
     @each $color, $shades in $colors {
         @each $shade, $value in $shades {
             --clr-#{$color}-#{$shade}: #{$value};
@@ -102,8 +99,7 @@ $colors: (
     }
 }
 // Color Utility Classes
-// i.e. Text Color: class="txc-bw-400"
-// i.e. Background Color: class="bgc-bw-400"
+// i.e. class="txc-primary-normal"
 @each $color, $shades in $colors {
     @each $shade, $value in $shades {
         .txc-#{$color}-#{$shade} { color: #{$value} };
@@ -113,10 +109,6 @@ $colors: (
 
 :root {
     --clr-transparent: transparent;
-}
-
-.bgc-transparent {
-    background-color: transparent;
 }
 
 // 1.2 Font Sizes
@@ -130,7 +122,10 @@ $type-scale: (
         300: 2rem,
         400: 3rem,
         500: 4rem,
-        600: 5rem
+        600: 5rem,
+        700: 6rem,
+        800: 7rem,
+        900: 8rem,
     ),
     large: (
         50: 1rem,
@@ -139,7 +134,10 @@ $type-scale: (
         300: 3rem,
         400: 4rem,
         500: 5rem,
-        600: 6rem
+        600: 6rem,
+        700: 7rem,
+        800: 8rem,
+        900: 9rem,
     )
 );
 
@@ -245,14 +243,16 @@ $text: (
 // #flow #spacing
 // --------------------------------------------------------
 $flow-space: (
-    xxl: 5rem,
-    xl: 4rem,
-    lg: 3rem,
-    med: 2rem,
-    sm: 1rem,
-    xsm: 0.5rem,
-    zed: 0,
-    auto: "auto"
+    900: 8rem,
+    800: 7rem,
+    700: 6rem,
+    600: 5rem,
+    500: 4rem,
+    400: 3rem,
+    300: 2rem,
+    200: 1rem,
+    100: 0.5rem,
+    0: 0,
 );
 
 // Flow Space CSS Variables
@@ -266,16 +266,16 @@ $flow-space: (
 // Flow Space Classes
 // i.e. class="flow-xxl"
 @each $flow, $value in $flow-space {
-    .m-all-#{$flow} { margin: #{$value} };
-    .m-bm-#{$flow} { margin-bottom: #{$value} };
-    .m-rt-#{$flow} { margin-right: #{$value} };
-    .m-lt-#{$flow} { margin-left: #{$value} };
-    .m-tp-#{$flow} { margin-top: #{$value} };
-    .p-all-#{$flow} { padding: #{$value} };
-    .p-bm-#{$flow} { padding-bottom: #{$value} };
-    .p-rt-#{$flow} { padding-right: #{$value} };
-    .p-lt-#{$flow} { padding-left: #{$value} };
-    .p-tp-#{$flow} { padding-top: #{$value} };
+    .m-all-#{$flow} { margin: #{$value} !important };
+    .m-b-#{$flow} { margin-bottom: #{$value} !important };
+    .m-r-#{$flow} { margin-right: #{$value} !important };
+    .m-l-#{$flow} { margin-left: #{$value} !important };
+    .m-t-#{$flow} { margin-top: #{$value} !important };
+    .p-all-#{$flow} { padding: #{$value} !important };
+    .p-b-#{$flow} { padding-bottom: #{$value} !important };
+    .p-r-#{$flow} { padding-right: #{$value} !important };
+    .p-l-#{$flow} { padding-left: #{$value} !important };
+    .p-t-#{$flow} { padding-top: #{$value} !important };
 }
 
 // 1.7 Opacity
@@ -335,9 +335,14 @@ $border-radius: (
 // #min #mid #max
 // --------------------------------------------------------
 $minmax: (
-    max: 100ch,
-    mid: 50ch,
-    min: 25ch
+    900: 100ch,
+    700: 80ch,
+    600: 70ch,
+    500: 60ch,
+    400: 50ch,
+    300: 40ch,
+    200: 30ch,
+    100: 20ch
 );
 // MinMax Width CSS Variables
 // i.e. --width-max

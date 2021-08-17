@@ -17,10 +17,8 @@
 // #articles
 // --------------------------------------------------------
 .articles {
-    background-color: var(--clr-secondary-50);
 
     .section-title {
-        color: var(--clr-secondary-700);
         font-size: var(--fs-100);
     }
 
@@ -28,7 +26,7 @@
         padding: 0;
 
         li {
-            margin-bottom: calc( var(--flow-xxl) * 2 );
+            margin-bottom: var(--flow-900);
 
             &:last-of-type {
                 margin-bottom: 0;
@@ -39,7 +37,7 @@
                 align-items: center;
                 flex-wrap: nowrap;
                 flex-direction: column-reverse;
-                gap: var(--flow-lg);
+                gap: var(--flow-300);
                 justify-content: center;
                 margin: 0;
                 max-width: var(--width-max);
@@ -53,12 +51,12 @@
                     & > *:nth-child(1) {
                         align-self: flex-start;
                         flex: 1 1 70%;
-                        min-width: var(--width-min);
+                        min-width: var(--width-400);
                     }
             
                     & > *:nth-child(2) {
                         flex: 1 1 30%;
-                        min-width: calc(var(--width-min) - 10);
+                        min-width: var(--width-300);
                     }
                 }
             }
@@ -71,12 +69,19 @@
                 }
             }
 
-            aside > img {
-                height: 100%;
-                object-fit: cover;
-                width: 100%;
-            }
-            
+            aside {
+                margin-bottom: var(--flow-300);
+                
+                @include media('>=tablet') {
+                    margin-bottom: 0;
+                }
+
+                & > img {
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }      
         }
     }
 }
@@ -84,79 +89,28 @@
 // 6.1.1 Articles List for Blog Page
 // #blog #articles
 // --------------------------------------------------------
-.blog .articles {
-    background-color: transparent;
-}
+// .blog .articles {}
 
 // 6.2 Article Meta
 // #article #meta
 // --------------------------------------------------------
 .meta {
-
-    &__author {
-        color: var(--clr-secondary-100);
-    }
-
-    &__date {
-        color: var(--clr-secondary-100);
+    
+    a {
+        color: var(--clr-secondary-500);
+        margin-right: var(--flow-100);
     }
 }
 
 // 6.3 Full Article Page
 // #full-article
 // --------------------------------------------------------
-/* body.article {
-} */
+// body.article {}
 
 // 6.4 Tags
 // #tags
 // --------------------------------------------------------
 .tags {
-    margin-bottom: var(--flow-xxl);
+    margin-bottom: var(--flow-800);
     padding: 0;
-
-    a {
-        background-color: var(--clr-secondary-100);
-        border-radius: var(--radius-med);
-        color: var(--clr-bw-0);
-        display: inline-block;
-        font-size: calc( var(--fs-100) * .5 );
-        letter-spacing: 1px;
-        margin-right: calc( var(--flow-xsm) * .5 );
-        margin-top: calc( var(--flow-xsm) & -1 );
-        padding: var(--flow-sm);
-        text-transform: var(--tt-upper);
-
-        &:hover {
-            background-color: var(--clr-secondary-700);
-        }
-    }
-
-    &.article__tags {
-
-        a {
-            margin-right: var(--flow-xsm);
-        }
-    }
-}
-
-.meta__tags {
-
-    a {
-        background-color: var(--clr-secondary-100);
-        border-radius: var(--radius-med);
-        color: var(--clr-bw-0);
-        display: inline-block;
-        font-size: calc( var(--fs-100) * .5 );
-        letter-spacing: 1px;
-        margin-right: calc( var(--flow-xsm) * .5 );
-        margin-top: calc( var(--flow-xsm) & -1 );
-        padding-left: var(--flow-sm);
-        padding-right: var(--flow-sm);
-        text-transform: var(--tt-upper);
-
-        &:hover {
-            background-color: var(--clr-secondary-700);
-        }
-    }
 }
