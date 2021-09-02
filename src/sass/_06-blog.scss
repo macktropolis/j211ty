@@ -95,10 +95,12 @@
 // #article #meta
 // --------------------------------------------------------
 .meta {
-    
     a {
-        color: var(--clr-secondary-500);
         margin-right: var(--flow-100);
+
+        &:last-of-type {
+            margin-right: 0;
+        }
     }
 }
 

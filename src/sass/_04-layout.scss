@@ -57,7 +57,7 @@
     }
 
     .caption {
-        color: var(--clr-bw-400);
+        color: hsl( var(--clr-black) / .80 );
         font-style: oblique;
         display: block;
         text-align: center;
@@ -108,11 +108,11 @@
     position: relative;
 
     &.bg {
-        background-color: var(--clr-surface-900);
-        color: var(--clr-bw-100);
+        background-color: hsl( var(--clr-surface) );
+        color: hsl( var(--clr-white) );
 
         &.invert {
-            background-color: var(--clr-surface-100);
+            background-color: hsl( var(--clr-surface) );
             color: var(--clr-bw-900);
         }
     }
@@ -155,8 +155,8 @@ header#site__header {
     }
 
     &.scrolled {
-        background-color: var(--clr-surface-100);
-        box-shadow: 0 0 1rem var(--clr-surface-900);
+        background-color: hsl( var(--clr-black) / .5 );
+        box-shadow: 0 0 var(--flow-100) hsl( var(--clr-black) );
         padding: var(--flow-300) var(--flow-200);
     }    
 }

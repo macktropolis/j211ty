@@ -23,8 +23,8 @@
 // #buttons
 // --------------------------------------------------------
 .btn {
-    background-color: var(--clr-secondary-500);
-    color: var(--clr-bw-100);
+    background-color: hsl( var(--clr-secondary) / .8 );
+    color: hsl( var(--clr-white) );
     display: inline-block;
     clear: both;
     letter-spacing: 1px;
@@ -35,22 +35,22 @@
     text-transform: var(--tt-upper);
 
     &:hover {
-        background-color: var(--clr-secondary-700);
+        background-color: hsl( var(--clr-secondary) );
     }
 
     &.error {
-        background-color: var(--clr-error-500);
+        background-color: hsl( var(--clr-error) / .8 );
         
         &:hover {
-            background-color: var(--clr-error-900);
+            background-color: hsl( var(--clr-error) );
         }
     }
 
     &.ok {
-        background-color: var(--clr-ok-500);
+        background-color: hsl( var(--clr-ok) / .8 );
 
         &:hover {
-            background-color: var(--clr-ok-900);
+            background-color: hsl( var(--clr-ok) );
         }
     }
     
@@ -75,7 +75,7 @@
     }
 
     .logo {
-        color: var(--clr-bw-100);
+        color: hsl( var(--clr-black) );
         height: auto;
         max-width: 300px;
     }
@@ -85,8 +85,8 @@
 // #cta
 // --------------------------------------------------------
 .cta {
-    background-color: var(--clr-primary-900);
-    color: var(--clr-bw-100);
+    background-color: hsl( var(--clr-primary) );
+    color: hsl( var(--clr-white) );
 
     & > .container__inner {
         max-width: var(--width-900);
@@ -184,7 +184,7 @@
             font-family: var(--ff-sans);
 
             a {
-                color: var(--clr-secondary-500);
+                color: hsl( var(--clr-white) );
                 display: block;
                 font-size: var(--fs-50);
                 opacity: 0;
@@ -194,16 +194,21 @@
                 text-transform: var(--tt-upper);
             }
 
-            a:hover {
-                color: var(--clr-secondary-400);
+            a::before {
+                background-color: hsl( var(--clr-white) );
             }
 
-            a::before {
-                background-color: var(--clr-bw-100);
+            a::after {
+                display: none;
             }
 
             [aria-current="page"] {
                 font-weight: var(--fw-900);
+
+                &::before {
+                    height: 20px;
+                    transform: scaleY(1);
+                }
             }
 
         }
@@ -215,8 +220,8 @@
 }
 
 .nav-toggle:checked ~ nav {
-    background-color: var(--clr-surface-100);
-    box-shadow: 0 0 1rem var(--clr-surface-900);
+    background-color: hsl( var(--clr-white) );
+    box-shadow: 0 0 var(--flow-100) hsl( var(--clr-black) );
     transform: scale(1,1);
 
     ul {
@@ -259,7 +264,7 @@
     span,
     span:before,
     span:after {
-        background-color: var(--clr-secondary-500);
+        background-color: hsl( var(--clr-white) );
         border-radius: 2px;
         display: block;
         height: 5px;
@@ -288,7 +293,7 @@
         span,
         span:before,
         span:after {
-            background-color: var(--clr-surface-900);
+            background-color: hsl( var(--clr-white) );
         }
     }
 }
@@ -320,7 +325,7 @@
                 }
 
                 a::before {
-                    background-color: var(--clr-secondary-500);
+                    background-color: hsl( var(--clr-white) );
                     content: '';
                     display: block;
                     height: 10px;

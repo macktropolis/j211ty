@@ -21,92 +21,114 @@
 // 1.1 Colors
 // #colors
 // --------------------------------------------------------
+$colors: (
+    primary: (
+        900: hsl(0, 0%, 10%),
+        800: hsl(0, 0%, 20%),
+        700: hsl(0, 0%, 30%),
+        600: hsl(0, 0%, 40%),
+        500: hsl(0, 0%, 50%),
+        400: hsl(0, 0%, 60%),
+        300: hsl(0, 0%, 70%),
+        200: hsl(0, 0%, 80%),
+        100: hsl(0, 0%, 90%),
+        50: hsl(0, 0%, 100%),
+    ),
+    secondary: (
+        900: hsl(356, 58%, 10%),
+        800: hsl(356, 58%, 20%),
+        700: hsl(356, 58%, 30%),
+        600: hsl(356, 58%, 40%),
+        500: hsl(356, 58%, 50%),
+        400: hsl(356, 58%, 60%),
+        300: hsl(356, 58%, 70%),
+        200: hsl(356, 58%, 80%),
+        100: hsl(356, 58%, 90%),
+        50: hsl(356, 58%, 95%),
+    ),
+    bg: (
+        900: hsl(218, 12%, 10%),
+        800: hsl(218, 12%, 20%),
+        700: hsl(218, 12%, 30%),
+        600: hsl(218, 12%, 40%),
+        500: hsl(218, 12%, 50%),
+        400: hsl(218, 12%, 60%),
+        300: hsl(218, 12%, 70%),
+        200: hsl(218, 12%, 80%),
+        100: hsl(218, 12%, 90%),
+    ),
+    surface: (
+        900: hsl(218, 12%, 10%),
+        800: hsl(218, 12%, 20%),
+        700: hsl(218, 12%, 30%),
+        600: hsl(218, 12%, 40%),
+        500: hsl(218, 12%, 50%),
+        400: hsl(218, 12%, 60%),
+        300: hsl(218, 12%, 70%),
+        200: hsl(218, 12%, 80%),
+        100: hsl(218, 12%, 90%),
+    ),
+    bw: (
+        900: hsl(218, 12%, 10%),
+        800: hsl(218, 12%, 20%),
+        700: hsl(218, 12%, 30%),
+        600: hsl(218, 12%, 40%),
+        500: hsl(218, 12%, 50%),
+        400: hsl(218, 12%, 60%),
+        300: hsl(218, 12%, 70%),
+        200: hsl(218, 12%, 80%),
+        100: hsl(218, 12%, 90%),
+    ),
+    error: ( 
+        500: hsl(356, 58%, 50%),
+    ),
+    warning: (
+        500: hsl(52, 86%, 58%),
+    ),
+    ok: (
+        500: hsl(80, 60%, 35%),
+    ),
+);
 :root {
-    --clr-primary: 0 0% 10%;
-    --clr-secondary: 356 58% 50%;
-    --clr-bg: 218 12% 90%;
-    --clr-surface: 218 12% 50%;
-    --clr-black: 218 12% 10%;
-    --clr-white: 218 12% 90%;
-    --clr-error: 356 58% 50%;
-    --clr-warning: 52 86% 58%;
-    --clr-ok: 80 60% 35%
-    --clr-transparent: transparent;
+    // Color CSS Variables
+    // i.e. --clr-primary-normal
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+}
+// Color Utility Classes
+// i.e. class="txc-primary-normal"
+@each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+        .txc-#{$color}-#{$shade} { color: #{$value} };
+        .bgc-#{$color}-#{$shade} { background-color: #{$value} };
+    }
 }
 
-// Color Utility Classes
-// i.e. class="txc-primary-100"
-.txc-primary-25 { color: hsl( var(--clr-primary) / .25 ) }
-.txc-primary-75 { color: hsl( var(--clr-primary) / .75 ) }
-.txc-primary-50 { color: hsl( var(--clr-primary) / .50 ) }
-.txc-primary-100 { color: hsl( var(--clr-primary) ) }
-.bgc-primary-25 { background-color: hsl( var(--clr-primary) / .25 ) }
-.bgc-primary-75 { background-color: hsl( var(--clr-primary) / .75 ) }
-.bgc-primary-50 { background-color: hsl( var(--clr-primary) / .50 ) }
-.bgc-primary-100 { background-color: hsl( var(--clr-primary) ) }
-
-.txc-secondary-25 { color: hsl( var(--clr-secondary) / .25 ) }
-.txc-secondary-75 { color: hsl( var(--clr-secondary) / .75 ) }
-.txc-secondary-50 { color: hsl( var(--clr-secondary) / .50 ) }
-.txc-secondary-100 { color: hsl( var(--clr-secondary) ) }
-.bgc-secondary-25 { background-color: hsl( var(--clr-secondary) / .25 ) }
-.bgc-secondary-75 { background-color: hsl( var(--clr-secondary) / .75 ) }
-.bgc-secondary-50 { background-color: hsl( var(--clr-secondary) / .50 ) }
-.bgc-secondary-100 { background-color: hsl( var(--clr-secondary) ) }
-
-.txc-bg-25 { color: hsl( var(--clr-bg) / .25 ) }
-.txc-bg-75 { color: hsl( var(--clr-bg) / .75 ) }
-.txc-bg-50 { color: hsl( var(--clr-bg) / .50 ) }
-.txc-bg-100 { color: hsl( var(--clr-bg) ) }
-.bgc-bg-25 { background-color: hsl( var(--clr-bg) / .25 ) }
-.bgc-bg-75 { background-color: hsl( var(--clr-bg) / .75 ) }
-.bgc-bg-50 { background-color: hsl( var(--clr-bg) / .50 ) }
-.bgc-bg-100 { background-color: hsl( var(--clr-bg) ) }
-
-.txc-surface-25 { color: hsl( var(--clr-surface) / .25 ) }
-.txc-surface-75 { color: hsl( var(--clr-surface) / .75 ) }
-.txc-surface-50 { color: hsl( var(--clr-surface) / .50 ) }
-.txc-surface-100 { color: hsl( var(--clr-surface) ) }
-.bgc-surface-25 { background-color: hsl( var(--clr-surface) / .25 ) }
-.bgc-surface-75 { background-color: hsl( var(--clr-surface) / .75 ) }
-.bgc-surface-50 { background-color: hsl( var(--clr-surface) / .50 ) }
-.bgc-surface-100 { background-color: hsl( var(--clr-surface) ) }
-
-.txc-black-25 { color: hsl( var(--clr-black) / .25 ) }
-.txc-black-75 { color: hsl( var(--clr-black) / .75 ) }
-.txc-black-50 { color: hsl( var(--clr-black) / .50 ) }
-.txc-black-100 { color: hsl( var(--clr-black) ) }
-.bgc-black-25 { background-color: hsl( var(--clr-black) / .25 ) }
-.bgc-black-75 { background-color: hsl( var(--clr-black) / .75 ) }
-.bgc-black-50 { background-color: hsl( var(--clr-black) / .50 ) }
-.bgc-black-100 { background-color: hsl( var(--clr-black) ) }
-
-.txc-white-25 { color: hsl( var(--clr-white) / .25 ) }
-.txc-white-75 { color: hsl( var(--clr-white) / .75 ) }
-.txc-white-50 { color: hsl( var(--clr-white) / .50 ) }
-.txc-white-100 { color: hsl( var(--clr-white) ) }
-.bgc-white-25 { background-color: hsl( var(--clr-white) / .25 ) }
-.bgc-white-75 { background-color: hsl( var(--clr-white) / .75 ) }
-.bgc-white-50 { background-color: hsl( var(--clr-white) / .50 ) }
-.bgc-white-100 { background-color: hsl( var(--clr-white) ) }
-
-.txc-white-25 { color: hsl( var(--clr-white) / .25 ) }
-.txc-white-75 { color: hsl( var(--clr-white) / .75 ) }
-.txc-white-50 { color: hsl( var(--clr-white) / .50 ) }
-.txc-white-100 { color: hsl( var(--clr-white) ) }
-.bgc-white-25 { background-color: hsl( var(--clr-white) / .25 ) }
-.bgc-white-75 { background-color: hsl( var(--clr-white) / .75 ) }
-.bgc-white-50 { background-color: hsl( var(--clr-white) / .50 ) }
-.bgc-white-100 { background-color: hsl( var(--clr-white) ) }
-
-.bgc-transparent { background-color: transparent }
+:root {
+    --clr-transparent: transparent;
+}
 
 // 1.2 Font Sizes
 // #font-size
 // --------------------------------------------------------
 $type-scale: (
     small: (
-        50: 1.25rem,
+        50: 1rem,
+        100: 1.5rem,
+        200: 1.75rem,
+        300: 2rem,
+        400: 3rem,
+        500: 4rem,
+        600: 5rem,
+        700: 6rem,
+        800: 7rem,
+        900: 8rem,
+    ),
+    large: (
+        50: 1rem,
         100: 1.5rem,
         200: 2rem,
         300: 3rem,
@@ -116,18 +138,6 @@ $type-scale: (
         700: 7rem,
         800: 8rem,
         900: 9rem,
-    ),
-    large: (
-        50: 1rem,
-        100: 1.25rem,
-        200: 1.75rem,
-        300: 2rem,
-        400: 3rem,
-        500: 4rem,
-        600: 5rem,
-        700: 6rem,
-        800: 7rem,
-        900: 8rem,
     )
 );
 

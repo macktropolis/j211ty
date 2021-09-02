@@ -22,8 +22,8 @@ html {
 }
 
 body {
-    background-color: var(--clr-bg-100);
-    color: var(--clr-bw-900);
+    background-color: hsl( var(--clr-bg) );
+    color: hsl( var(--clr-black));
     font-family: var(--ff-sans);
     font-size: var(--fs-50);
 }
@@ -46,7 +46,7 @@ p {
 }
 
 hr {
-    background-color: var(--clr-surface-900);
+    background-color: hsl( var(--clr-secondary) / .5 );
     margin-bottom: var(--flow-200);
     opacity: 0.25;
 }
@@ -67,6 +67,28 @@ a#anchor--home {
     padding: 0;
     text-indent: -9999px;
     width: 0;
+}
+
+a {
+    color: hsl( var(--clr-secondary ) );
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        background-color: hsl( var(--clr-secondary) );
+        content: ('');
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: 0.5s;
+        width: 0;
+    }
+
+    &:hover::after {
+        transition: all 0.5s ease-in-out;
+        width: 100%;
+    }
 }
 
 // 3.4  Images
@@ -95,10 +117,6 @@ img {
 // 3.10 Classes
 // #classes
 // --------------------------------------------------------
-.bgc-transparent {
-    background-color: transparent;
-}
-
 .no-margin {
     margin: 0 !important;
 }
