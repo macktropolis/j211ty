@@ -4,7 +4,8 @@
     ├── 3.1 Structure
     ├── 3.2 Text
     ├── 3.3 Anchors
-    └── 3.4 Images
+    ├── 3.4 Images
+    └── 3.5 Lists
 -------------------------------------------------------- */
 
 /* --------------------------------------------------------
@@ -22,7 +23,7 @@ html {
 }
 
 body {
-    background-color: hsl( var(--clr-bg) );
+    background-color: hsl( var(--clr-bg) / .75 );
     color: hsl( var(--clr-black));
     font-family: var(--ff-sans);
     font-size: var(--fs-50);
@@ -33,13 +34,34 @@ body {
 // --------------------------------------------------------
 h1, h2, h3, h4, h5, h6, p {
     line-height: 150%;
-    margin-bottom: var(--flow-200);
+    margin-bottom: var(--flow-200); 
 }
 
-h1 { font-size: var(--fs-300); }
-h2 { font-size: var(--fs-200); }
-h3 { font-size: var(--fs-100); }
-h4, h5, h6 { font-size: calc( var(--fs-100) * .75 ); }
+h1 { font-size: var(--fs-500); }
+h2 { font-size: var(--fs-400); }
+h3 { font-size: var(--fs-300); }
+h4 { font-size: var(--fs-200); }
+h5 { font-size: var(--fs-100); }
+h6 { font-size: var(--fs-50); }
+
+h1, h2, h3, h4, h5, h6 {
+    color: hsl( var(--clr-secondary) );
+
+    > a {
+        padding: var(--flow-100);
+    }
+
+    > a:hover {
+        color: hsl( var(--clr-white) );
+    }
+
+    > a::after,
+    > a:hover::after {
+        height: 100%;
+        inset: 0;
+        z-index: -1;
+    }
+}
 
 p { 
     line-height: 200%; 
@@ -72,6 +94,7 @@ a#anchor--home {
 a {
     color: hsl( var(--clr-secondary ) );
     display: inline-block;
+    line-height: normal;
     position: relative;
 
     &::after {
@@ -80,14 +103,18 @@ a {
         height: 3px;
         position: absolute;
         left: 0;
-        bottom: 0;
-        transition: 0.5s;
-        width: 0;
+        right: 0;
+        bottom: -5px;
+        transition: transform 0.35s ease-in-out;
+        transform: scale(0, 1);
+        transform-origin: right bottom;
+        width: 100%;
     }
 
     &:hover::after {
-        transition: all 0.5s ease-in-out;
-        width: 100%;
+        transform: scale(1, 1);
+        transform-origin: left bottom;
+        transition: transform 0.45s ease-in-out;
     }
 }
 
@@ -102,7 +129,7 @@ img {
         left: 0;
         height: 100%;
         width: 100%;
-        z-index: 0;
+        z-index: -2;
         
         &.cover {
             object-fit: cover;
@@ -111,16 +138,248 @@ img {
         &.contain {
             object-fit: contain;
         }
+
+        &.bottom {
+            object-position: bottom;
+        }
+
+        &.center {
+            object-position: center;
+        }
+        
+        &.top {
+            object-position: top;
+        }
+    }
+
+    &.align-left {
+        float: left;
+        margin-bottom: var(--flow-200);
+        margin-right: var(--flow-200);
+    }
+
+    &.align-right {
+        float: right;
+        margin-bottom: var(--flow-200);
+        margin-left: var(--flow-200);
+    }
+
+    &.align-center {
+        float: none;
+        @include center-margins;
     }
 }
 
-// 3.10 Classes
-// #classes
+// 3.5  Lists
+// #ul #ol
 // --------------------------------------------------------
-.no-margin {
-    margin: 0 !important;
+ul, ol {
+    margin-bottom: var(--flow-200);
+    margin-top: var(--flow-200);
+
+    li {
+        margin-bottom: var(--flow-100);
+        padding-left: var(--flow-100);
+
+        &:last-of-type {
+            margin-bottom: 0 !important;
+        }
+
+        &::marker {
+            color: hsl( var(--clr-secondary) );
+        }
+    }
 }
 
-.no-padding {
-    padding: 0 !important;
+ol {
+    list-style: decimal;
+}
+
+ul {
+    list-style: disc;
+}
+
+// 3.6  Code
+// #pre #code
+// --------------------------------------------------------
+pre {
+    background-color: hsl( var(--clr-primary) / .1 );
+    border-top-right-radius: var(--flow-50);
+    border-bottom-left-radius: var(--flow-50);
+    color: hsl( var(--clr-primary) );
+    display: grid;
+    margin-bottom: var(--flow-200);
+    position: relative;
+
+    code {
+        display: block;
+        margin: 0;
+        overflow-x: auto;
+        padding: var(--flow-400);
+        scrollbar-color: hsl( var(--clr-primary) ) hsl( var(--clr-primary) / .5 );
+        scrollbar-width: auto;
+        width: 100%;
+
+        &::-webkit-scrollbar-track {
+            background-color: hsl( var(--clr-primary) / .5 );
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: hsl( var(--clr-primary) );
+            border-radius: var(--border-50);
+            border: 5px solid hsl( var(--color-primary) );
+        }
+    }
+
+    &::after {
+        background-color: hsl( var(--clr-primary) / .5 );
+        border-bottom-left-radius: var(--flow-50);
+        border-top-right-radius: var(--flow-50);
+        color: hsl( var(--clr-white) );
+        content: 'HTML';
+        display: block;
+        padding: var(--flow-50) var(--flow-100);
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-transform: var(--tt-lower);
+    }
+
+    &::selection {
+        background-color: hsl( var(--clr-primary) );
+        color: hsl( var(--clr-primary) / .5 );
+    }
+
+    &.language-css,
+    &.language-sass,
+    &.language-scss {
+        background-color: hsl( var(--clr-tertiary) / .1 );
+        color: hsl( var(--clr-tertiary) );
+        scrollbar-color: hsl( var(--clr-tertiary) / .1 ) hsl( var(--clr-tertiary) );
+
+        &::after {
+            background-color: hsl( var(--clr-tertiary) );
+            content: 'CSS';
+        }
+
+        &::selection {
+            background-color: hsl( var(--clr-tertiary) );
+            color: hsl( var(--clr-tertiary) / .5 );
+        }
+
+        code {
+
+            &::-webkit-scrollbar-track {
+                background-color: hsl( var(--clr-tertiary) / .5 );
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background-color: hsl( var(--clr-tertiary) );
+                border-radius: var(--border-50);
+                border: 5px solid hsl( var(--clr-tertiary) );
+            }
+        }
+    }
+
+    &.language-sass,
+    &.language-scss {
+        &::after {
+            content: 'SCSS';
+        }   
+    }
+
+    &.language-javascript,
+    &.language-js {
+        background-color: hsl( var(--clr-quaternary) / .1 );
+        color: hsl( var(--clr-quaternary) );
+        scrollbar-color: hsl( var(--clr-quaternary) / .1 ) hsl( var(--clr-quaternary) );
+
+        &::after {
+            background-color: hsl( var(--clr-quaternary) );
+            content: 'Javascript';
+        }
+
+        &::selection {
+            background-color: hsl( var(--clr-quaternary) );
+            color: hsl( var(--clr-quaternary) / .5 );
+        }
+
+        code {
+
+            &::-webkit-scrollbar-track {
+                background-color: hsl( var(--clr-quaternary) / .5 );
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background-color: hsl( var(--clr-quaternary) );
+                border-radius: var(--border-50);
+                border: 5px solid hsl( var(--clr-quaternary) );
+            }
+        }
+    }
+
+    &.language-filemaker {
+        background-color: hsl( var(--clr-ok) / .1 );
+        color: hsl( var(--clr-ok) );
+        scrollbar-color: hsl( var(--clr-ok) / .1 ) hsl( var(--clr-ok) );
+        
+        &::after {
+            background-color: hsl( var(--clr-ok) );
+            content: 'FileMaker';
+        }
+
+        &::selection {
+            background-color: hsl( var(--clr-ok) );
+            color: hsl( var(--clr-ok) / .5 );
+        }
+
+        code {
+
+            &::-webkit-scrollbar-track {
+                background-color: hsl( var(--clr-ok) / .5 );
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background-color: hsl( var(--clr-ok) );
+                border-radius: var(--border-50);
+                border: 5px solid hsl( var(--clr-ok) );
+            }
+        }
+    }
+
+    &.language-sql,
+    &.language-ruby {
+        background-color: hsl( var(--clr-error) / .1 );
+        color: hsl( var(--clr-error) );
+        scrollbar-color: hsl( var(--clr-error) / .1 ) hsl( var(--clr-error) );
+
+        &::after {
+            background-color: hsl( var(--clr-error) );
+            content: 'SQL';
+        }
+
+        &::selection {
+            background-color: hsl( var(--clr-error) );
+            color: hsl( var(--clr-error) / .5 );
+        }
+
+        code {
+
+            &::-webkit-scrollbar-track {
+                background-color: hsl( var(--clr-error) / .5 );
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background-color: hsl( var(--clr-error) );
+                border-radius: var(--border-50);
+                border: 5px solid hsl( var(--clr-error) );
+            }
+        }
+    }
+
+    &.language-ruby {
+        &::after {
+            content: 'Ruby';
+        }
+    }
 }

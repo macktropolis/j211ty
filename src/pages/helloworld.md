@@ -1,6 +1,7 @@
 ---
-title: "Hello World"
+title: 'Hello World'
 description: 'A demo of the "Page" template and kitchen sink sample of styled elements.'
+image: '/assets/backgrounds/code.jpg'
 ---
 
 > Credit for the kitchen sink elements to the ["Just the Docs"](https://github.com/pmarsceill/just-the-docs) project by [pmarsceill](https://github.com/pmarsceill).
@@ -21,24 +22,54 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ### Header 3
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require("./lang/" + l);
-  return true;
-};
-```
+<pre class="language-js">
+  <code>
+    // Javascript code with syntax highlighting.
+    var fun = function lang(l) {
+      dateformat.i18n = require("./lang/" + l);
+      return true;
+    };
+  </code>
+</pre>
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+<pre class="language-scss">
+  <code>
+    .btn {
+      background: transparent;
+      border: var(--flow-50) solid hsl( var(--clr-secondary) );
+      color: hsl( var(--clr-secondary) );
+      display: inline-block;
+      clear: both;
+      letter-spacing: 1px;
+      padding: var(--flow-200) var(--flow-500);
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      text-transform: var(--tt-upper);
+    }
+  </code>
+</pre>
 
-```
+<pre class="language-ruby">
+  <code>
+    # Ruby code with syntax highlighting
+    GitHubPages::Dependencies.gems.each do |gem, version|
+      s.add_dependency(gem, "= #{version}")
+    end
+  </code>
+</pre>
+
+<pre>
+  <code>
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+  </code>
+</pre>
+
+<pre class="language-filemaker">
+  <code>
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+  </code>
+</pre>
 
 #### Header 4
 

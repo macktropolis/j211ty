@@ -1,7 +1,7 @@
 <section class="articles latest">
     <div class="container__inner flow grid">
         <h2 class="section-title text-center tt-upper">Latest Articles</h2>
-        <hr class="h-rule bgc-secondary-500 m-b-500">
+        <hr class="h-rule bgc-secondary m-b-500">
         <ul role="list" class="articles__list flow">
             {%- for item in collections.blog | limitTo(3) -%}
                {% include '_article-snippet.njk' %}

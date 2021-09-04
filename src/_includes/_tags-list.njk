@@ -1,6 +1,8 @@
+<h2 class="text-center txc-black-50 fs-300 m-b-50">Tags</h2>
+<hr>
 <section class="tags flow flex">
 {% for tag in collections.tagList %}
     {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="post-tag {{ tag | slug }}"># {{ tag }}</a>
+        <a href="{{ tagUrl | url }}" class="post-tag {{ tag | slug }}">#{{ tag }}</a>
 {% endfor %}
 </section>

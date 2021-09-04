@@ -5,8 +5,6 @@ pageClass: 'home'
 
 {% set postListItems = pagination.items %}
 
-{% include '_jumbotron.njk' %}
-
 {% block content %}
     {{ content | safe }}
 {% endblock %}

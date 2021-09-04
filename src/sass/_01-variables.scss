@@ -24,13 +24,17 @@
 :root {
     --clr-primary: 0 0% 10%;
     --clr-secondary: 356 58% 50%;
+    --clr-tertiary: 25 96% 60%;
+    --clr-quaternary: 260 42% 46%;
+    --clr-quinary: 40 96% 27%;
+    --clr-senary: 33 49% 19%;
     --clr-bg: 218 12% 90%;
     --clr-surface: 218 12% 50%;
     --clr-black: 218 12% 10%;
     --clr-white: 218 12% 90%;
     --clr-error: 356 58% 50%;
     --clr-warning: 52 86% 58%;
-    --clr-ok: 80 60% 35%
+    --clr-ok: 80 60% 35%;
     --clr-transparent: transparent;
 }
 
@@ -242,6 +246,7 @@ $flow-space: (
     300: 2rem,
     200: 1rem,
     100: 0.5rem,
+    50: 0.25rem,
     0: 0,
 );
 

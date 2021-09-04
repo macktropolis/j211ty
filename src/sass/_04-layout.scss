@@ -86,7 +86,7 @@
     }
 }
 
-// 4.5  Site Content
+// 4.4  Site Content
 // #site-content
 // --------------------------------------------------------
 .site__content {
@@ -100,7 +100,7 @@
     }
 }
 
-// 4.6  Container Wrapper
+// 4.5  Container Wrapper
 // #container #wrapper
 // --------------------------------------------------------
 .container {
@@ -128,7 +128,7 @@
     }
 }
 
-// 4.7 Site Header
+// 4.6 Site Header
 // #site-header
 // --------------------------------------------------------
 header#site__header {
@@ -155,13 +155,15 @@ header#site__header {
     }
 
     &.scrolled {
-        background-color: hsl( var(--clr-black) / .5 );
-        box-shadow: 0 0 var(--flow-100) hsl( var(--clr-black) );
+        background-color: hsl( var(--clr-black) / .9 );
+        box-shadow: 0 0 var(--flow-50) hsl( var(--clr-black) );
         padding: var(--flow-300) var(--flow-200);
+
+        @include add-noise;
     }    
 }
 
-// 4.8 Site Footer
+// 4.7 Site Footer
 // #site-footer
 // --------------------------------------------------------
 footer#site__footer {
@@ -183,11 +185,4 @@ footer#site__footer {
             text-align: center;
         }
     }
-}
-
-// 4.9 Page Header
-// #page-header
-// --------------------------------------------------------
-.page-header {
-    padding-top: var( --flow-800 );
 }
