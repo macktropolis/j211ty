@@ -5,7 +5,8 @@
     |   └── 6.1.1 Articles List for Blog Page
     ├── 6.2 Article Meta
     ├── 6.3 Main Article Page
-    └── 6.4 Tags
+    ├── 6.4 Tags
+    └── 6.5 Pagination
 -------------------------------------------------------- */
 
 /* --------------------------------------------------------
@@ -43,6 +44,7 @@
                 justify-content: center;
                 margin: 0;
                 max-width: var(--width-max);
+                width: 100%;
                 padding: 0;
 
                 @include center-margins;
@@ -61,10 +63,6 @@
                         min-width: var(--width-300);
                     }
                 }
-            }
-
-            article > .btn {
-                display: block;
             }
 
             aside {
@@ -115,4 +113,24 @@
 .tags {
     margin-bottom: var(--flow-800);
     padding: 0;
+}
+
+// 6.4 Pagination
+// #pagination
+// --------------------------------------------------------
+.pagination {
+    margin-top: var(--flow-600);
+
+    &__inner.grid {
+        justify-content: start;
+        width: 100%;
+
+        a.btn[data-direction="forwards"] {
+            justify-self: start;
+        }
+
+        a.btn[data-direction="backwards"] {
+            justify-self: end;
+        }
+    }
 }

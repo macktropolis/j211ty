@@ -45,21 +45,10 @@ h5 { font-size: var(--fs-100); }
 h6 { font-size: var(--fs-50); }
 
 h1, h2, h3, h4, h5, h6 {
-    color: hsl( var(--clr-secondary) );
+    font-weight: var(--fw-900);
 
     > a {
         padding: var(--flow-100);
-    }
-
-    > a:hover {
-        color: hsl( var(--clr-white) );
-    }
-
-    > a::after,
-    > a:hover::after {
-        height: 100%;
-        inset: 0;
-        z-index: -1;
     }
 }
 
@@ -186,13 +175,22 @@ ul, ol {
         }
 
         &::marker {
-            color: hsl( var(--clr-secondary) );
+            color: hsl( var(--clr-primary) / .5 );
+            font-weight: var(--fw-700);
         }
     }
 }
 
 ol {
     list-style: decimal;
+
+    ol {
+        list-style: upper-alpha;
+
+        ol:first-of-type {
+            list-style: upper-roman;
+        }
+    }
 }
 
 ul {

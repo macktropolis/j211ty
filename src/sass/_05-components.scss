@@ -8,7 +8,6 @@
     |   ├── 5.5.1 Current Page
     |   ├── 5.5.2 Base Navigation
     |   └── 5.5.3 Navigation for Tablet+ Screen Sizes
-    └── 5.6 Pagination
 -------------------------------------------------------- */
 
 /* --------------------------------------------------------
@@ -103,6 +102,7 @@
 
         h1, h2, h3, h4, h5, h6 {
             color: var(--clr-white);
+            font-size: var(--fs-400);
             margin-bottom: var(--flow-50);
         }
 
@@ -110,6 +110,10 @@
             height: 100%;
             object-fit: contain;
             width: 100%;
+        }
+
+        .meta {
+            color: hsl( var(--clr-white) / .75);
         }
     }
 
@@ -351,25 +355,6 @@
                     }
                 }
             }
-        }
-    }
-}
-
-// 5.6 Pagination
-// #pagination
-// --------------------------------------------------------
-.pagination {
-    
-    &__inner.grid {
-        justify-content: start;
-        width: 100%;
-
-        a.btn[data-direction="forwards"] {
-            justify-self: start;
-        }
-
-        a.btn[data-direction="backwards"] {
-            justify-self: end;
         }
     }
 }
