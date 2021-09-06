@@ -9,7 +9,7 @@
             <hr>
             <p class="snippet__meta meta">
                 <span class="meta__author">{{ item.data.author }}</span> &bull; 
-                <span class="meta__date">{{ item.date | postDate }}</span> &bull; 
+                <span class="meta__date">{{ item.date | htmlDateString }}</span> &bull; 
                 <span class="meta__tags">
                     {% for tag in item.data.tags | filterTagList %}
                     {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
