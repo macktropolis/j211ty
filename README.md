@@ -4,7 +4,7 @@
 > Created by Mack Richardson ([@macktropolis](https://github.com/macktropolis))
 > 
 ## Overview
-J211ty [Jammin' 2 11ty] is a Jamstack site framework meant to get your site up and running quickly with 11ty and SASS.
+J211ty [ Jammin' 2 11ty ] is a Jamstack site framework meant to get your site up and running quickly with Eleventy and SASS.
 ## Quick Start
 
 1. [Generate a repo from this template](https://github.com/macktropolis/j211ty/generate)
