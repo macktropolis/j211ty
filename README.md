@@ -1,10 +1,10 @@
 ![](https://www.dropbox.com/s/4kjv41m03748tjo/j211ty-lobby-card%402x.jpg?raw=1)
 
-# J211TY
+# J211ty
 > Created by Mack Richardson ([@macktropolis](https://github.com/macktropolis))
 > 
 ## Overview
-Jammin' to Eleventy is a Jamstack site framework meant to get your site up and running quickly with 11ty and SASS.
+J211ty [Jammin' 2 11ty] is a Jamstack site framework meant to get your site up and running quickly with 11ty and SASS.
 ## Quick Start
 
 1. [Generate a repo from this template](https://github.com/macktropolis/j211ty/generate)
