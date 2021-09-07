@@ -1,4 +1,4 @@
-![](https://www.dropbox.com/s/q6d3qgmayo7epxa/jammin-lobby-card.jpg?raw=1)
+![](https://www.dropbox.com/s/4kjv41m03748tjo/j211ty-lobby-card%402x.jpg?raw=1)
 
 # Jammin' to Eleventy
 > Created by Mack Richardson ([@macktropolis](https://github.com/macktropolis))
