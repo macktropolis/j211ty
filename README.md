@@ -1,23 +1,19 @@
-![](https://www.dropbox.com/s/q6d3qgmayo7epxa/jammin-lobby-card.jpg?raw=1)
+![](https://www.dropbox.com/s/4kjv41m03748tjo/j211ty-lobby-card%402x.jpg?raw=1)
 
-# Jammin' to Eleventy
+# J211ty
 > Created by Mack Richardson ([@macktropolis](https://github.com/macktropolis))
 > 
 ## Overview
-Jammin' to Eleventy is a Jamstack site framework meant to get your site up and running quickly with 11ty and SASS.
+J211ty [ Jammin' 2 11ty ] is a Jamstack site framework meant to get your site up and running quickly with Eleventy and SASS.
 ## Quick Start
 
 1. [Generate a repo from this template](https://github.com/macktropolis/j211ty/generate)
    which will copy this project into your own new repo.
-
-1. Once cloned, run `npm install` to install 11ty and other dependencies. Then run `npm start` to run both 11ty and sass in watch
-   mode. Use `npm run build` to run a production version, which will also generate social share
-   preview images.
-
-1. Open `src/_data/site.json` and adjust the values to your details.
-
-2. Review the [11ty documentation](https://11ty.dev) to more deeply apply customizations, including
-   adding custom data sources and reviewing what template languages are available.
+2. Delete the `public` directory.
+3. Run `npm install` to install 11ty and other dependencies.
+4. Run `npm start` to run both 11ty and sass in watch mode. Use `npm run build` to run a production version, which will also generate social share preview images.
+5. Open `src/_data/site.json` and adjust the values to your details.
+6. Review the [11ty documentation](https://11ty.dev) to more deeply apply customizations, including adding custom data sources and reviewing what template languages are available.
 
 ### Is Netlify hosting required?
 
