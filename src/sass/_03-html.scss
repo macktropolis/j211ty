@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    background-color: hsl( var(--clr-bg) / .75 );
+    background-color: hsl( var(--clr-bg) / .50 );
     color: hsl( var(--clr-black));
     font-family: var(--ff-sans);
     font-size: var(--fs-50);
@@ -33,7 +33,7 @@ body {
 // #text
 // --------------------------------------------------------
 h1, h2, h3, h4, h5, h6, p {
-    line-height: 150%;
+    line-height: 125%;
     margin-bottom: var(--flow-200); 
 }
 
@@ -200,18 +200,28 @@ ul {
 // 3.6  Code
 // #pre #code
 // --------------------------------------------------------
+code {
+    background-color: hsl( var(--clr-black) / .1 );
+    border-radius: var(--flow-100);
+    display: inline-block;
+    padding-left: var(--flow-200);
+    padding-right: var(--flow-200);
+}
+
 pre {
     background-color: hsl( var(--clr-primary) / .1 );
-    border-top-right-radius: var(--flow-50);
-    border-bottom-left-radius: var(--flow-50);
+    border-top-right-radius: var(--flow-100);
+    border-bottom-left-radius: var(--flow-100);
     color: hsl( var(--clr-primary) );
     display: grid;
     margin-bottom: var(--flow-200);
     position: relative;
 
     code {
+        background-color: transparent;
         display: block;
         margin: 0;
+        overflow-y: hidden;
         overflow-x: auto;
         padding: var(--flow-400);
         scrollbar-color: hsl( var(--clr-primary) ) hsl( var(--clr-primary) / .5 );
@@ -317,9 +327,9 @@ pre {
     }
 
     &.language-filemaker {
-        background-color: hsl( var(--clr-ok) / .1 );
+        background-color: hsl( var(--clr-ok) / .2 );
         color: hsl( var(--clr-ok) );
-        scrollbar-color: hsl( var(--clr-ok) / .1 ) hsl( var(--clr-ok) );
+        scrollbar-color: hsl( var(--clr-ok) / .2 ) hsl( var(--clr-ok) );
         
         &::after {
             background-color: hsl( var(--clr-ok) );

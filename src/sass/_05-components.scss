@@ -20,6 +20,7 @@
 .brand {
     display: flex;
     align-items: center;
+    text-align: center;
 
     h1.brand__title {
         opacity: 0;
@@ -36,6 +37,12 @@
         filter: invert(22%) sepia(36%) saturate(3020%) hue-rotate(328deg) brightness(121%) contrast(94%);
         height: auto;
         max-width: 175px;
+
+        @include center-margins;
+
+        @include media('>tablet') {
+            margin-left: 0;
+        }
     }
 }
 
@@ -103,13 +110,23 @@
         h1, h2, h3, h4, h5, h6 {
             color: var(--clr-white);
             font-size: var(--fs-400);
-            margin-bottom: var(--flow-50);
+            margin-bottom: var(--flow-200);
+            text-align: center;
+
+            @include media('>=tablet') {
+                margin-bottom: var(--flow-50);
+                text-align: left;
+            }
         }
 
         aside > img {
+            display: block;
             height: 100%;
             object-fit: contain;
             width: 100%;
+            max-width: 80%;
+
+            @include center-margins;
         }
 
         aside > .logo {
